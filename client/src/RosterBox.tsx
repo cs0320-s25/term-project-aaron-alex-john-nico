@@ -8,6 +8,8 @@ const RosterBox: React.FC = () => {
         width: "40vw",
         height: "70vh",
         flexShrink: 0,
+        overflowY: "scroll",
+        overflowX: "hidden",
       }}
     >
     </div>

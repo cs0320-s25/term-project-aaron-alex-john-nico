@@ -8,6 +8,8 @@ const PlayerBox: React.FC = () => {
         width: "60vw",
         height: "70vh",
         flexShrink: 0,
+        overflowY: "scroll",
+        overflowX: "hidden",
       }}
     >
     </div>
