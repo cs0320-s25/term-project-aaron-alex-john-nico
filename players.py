@@ -1,4 +1,6 @@
 import data2024
+import pandas as pd
+import csv
 
 from dataclasses import dataclass, field
 
@@ -84,12 +86,30 @@ top_tes = [p for p in top_players if p.position == "TE"]
 
 print(len(top_rbs))
 print(len(top_wrs))
-#print(top_wrs)
+print(top_wrs)
 print(len(top_kickers))
 print(len(top_def))
 #print(top_def)
 print(len(top_tes))
 print(len(top_kickers))
+
+df = pd.DataFrame(top_players)
+
+#top_players.to_csv("top_free_agents.csv", index=False)
+
+with open('players.csv', 'w', newline='') as file:
+    writer = csv.writer(file)
+    # Write headers manually
+    writer.writerow(['Name', 'Position', 'PositionRank', 'ProjectedPoints', 'ByeWeek'])
+    
+    for player in top_players:
+        writer.writerow([
+            player.name,
+            player.position,
+            player.pos_rank,
+            player.proj_points,
+            player.bye
+        ])
 
 #print(top_players)
 #Add fields: name, pos, posRank, proj. points
