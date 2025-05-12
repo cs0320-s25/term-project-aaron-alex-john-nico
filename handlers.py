@@ -12,25 +12,54 @@ def make_add_player_handler(organizer, user_team, opp_team):
         player = organizer.remove_player_by_name(name, position)
         if player is None:
             return jsonify({"status": "failure", "message": "Player not found."}), 404
-        
+
         if user:
-            user_team[position] += 1
+            user_team[position].append(player)
         else:
-            opp_team.append(player)
+            opp_team[position].append(player)
 
         return jsonify({"status": "success", "message": f"{player.name} added."}), 200
     return add_player
 
-
-# TODO: Need to modify so that you just retrieve a given player, not return next best player
 def make_get_player_handler(organizer: PlayerOrganizer):
     def get_player():
         position = request.args.get("position")
-        player = organizer.get_next_best_player(position)
+        name = request.args.get("name")
+        player = organizer.get_player_by_name(position, name)
         if player:
             return jsonify(player.__dict__), 200
         return jsonify({"message": "No player found for position."}), 404
     return get_player
+
+def make_remove_player_handler(organizer, user_team, opp_team):
+    def remove_player():
+        name = request.args.get("name")
+        position = request.args.get("position")
+        user_str = request.args.get("user").lower()
+        user = user_str == "true"
+
+        if position not in ["QB", "WR", "RB", "TE", "D/ST", "K"]:
+            return jsonify({"message": "Position not found."}), 404
+
+        if user:
+            for i in range(user_team[position]):
+                player = user_team[position][i]
+                if player.name.lower() == name.lower():
+                    user_team[position].pop(i)
+                    organizer.add_player(player)
+                    return jsonify({"status": "success", "message": f"{player.name} added."}), 200
+        else:
+            for i in range(opp_team[position]):
+                player = opp_team[position][i]
+                if player.name.lower() == name.lower():
+                    opp_team[position].pop(i)
+                    organizer.add_player(player)
+                    return jsonify({"status": "success", "message": f"{player.name} added."}), 200
+        
+        return jsonify({"status": "failure", "message": f"{name} not found in team."}), 404
+
+        
+    return remove_player
 
 # I think this one is fine for now, basically just returns all the players in the organizer
 def make_fetch_all_players_handler(organizer: PlayerOrganizer):

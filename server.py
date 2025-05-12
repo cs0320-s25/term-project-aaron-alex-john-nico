@@ -6,6 +6,7 @@ from handlers import (
     make_add_player_handler,
     make_get_player_handler,
     make_fetch_all_players_handler,
+    make_remove_player_handler
 )
 
 bye_weeks = {
@@ -56,12 +57,13 @@ def create_app():
         new_player = Player(player.name, player.position, player.posRank, player.projected_avg_points, bye)
         organizer.add_player(new_player)
 
-    user_team = {"QB": 0, "WR": 0, "RB": 0, "TE": 0, "D/ST": 0, "K": 0}
-    opp_team = []
+    user_team = {"QB": [], "WR": [], "RB": [], "TE": [], "D/ST": [], "K": []}
+    opp_team = {"QB": [], "WR": [], "RB": [], "TE": [], "D/ST": [], "K": []}
 
     # Register handlers with injected dependencies
     app.route("/add-player", methods=["GET"])(make_add_player_handler(organizer, user_team, opp_team))
     app.route("/get-player", methods=["GET"])(make_get_player_handler(organizer))
+    app.route("/remove-player", methods=["GET"])(make_remove_player_handler(organizer, user_team, opp_team))
     app.route("/fetch-all-players", methods=["GET"])(make_fetch_all_players_handler(organizer))
 
     return app

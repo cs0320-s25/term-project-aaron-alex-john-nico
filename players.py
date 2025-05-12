@@ -72,6 +72,24 @@ class PlayerOrganizer:
         self.player_map[position] = new_queue
 
         return removed_player
+    
+    def get_player_by_name(self, position: str, name: str):
+        """
+        Returns a player object matching the given name and position.
+        Does not remove the player from the organizer.
+        Returns None if the position or player is not found.
+        """
+        if position not in self.player_map:
+            print(f"Position '{position}' not found in player_map.")
+            return None
+
+        for player in self.player_map[position]:
+            if player.name.lower() == name.lower():
+                return player
+
+        print(f"Player with name '{name}' not found in position '{position}'.")
+        return None
+
 
     def print_all_players(self):
         for position, queue in self.player_map.items():
