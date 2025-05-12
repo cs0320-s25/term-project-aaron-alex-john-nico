@@ -1,17 +1,31 @@
 import React from "react";
+import { useDraft } from "./DraftContext";
+import TeamCard from "./TeamCard";
 
 const TeamBar: React.FC = () => {
-    return (
-        <div
+  const { numTeams, draftPosition } = useDraft();
+
+  return (
+    <div
       style={{
-        backgroundColor: "#262942",
+        backgroundColor: "#15192D",
         width: "100vw",
-        height: "20vh",
-        flexShrink: 0,
+        height: "15vh",
+        overflowX: "auto",
+        display: "flex",
+        alignItems: "center",
+        padding: "1rem",
       }}
     >
+      {Array.from({ length: numTeams }, (_, i) => (
+        <TeamCard
+          key={i}
+          teamNumber={i + 1}
+          isUserTeam={draftPosition === i + 1}
+        />
+      ))}
     </div>
-    );
+  );
 };
 
 export default TeamBar;
