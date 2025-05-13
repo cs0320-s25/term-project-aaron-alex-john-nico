@@ -3,7 +3,7 @@ import PlayerCard, { Player } from "./PlayerCard";
 
 const mockPlayers: Player[] = [
   {
-    name: "Christian McCaffrey",
+    name: "Joe Mixon",
     position: "RB",
     team: "Texans",
     imageUrl: "https://a.espncdn.com/i/headshots/nfl/players/full/3116385.png",
