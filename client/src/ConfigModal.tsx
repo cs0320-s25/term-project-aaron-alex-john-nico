@@ -12,7 +12,7 @@ const ConfigModal: React.FC<ModalProps> = ({ isOpen, onClose, title }) => {
 
   const handleNumTeamsChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const val = parseInt(e.target.value);
-    if (!isNaN(val) && val >= 2) {
+    if (!isNaN(val) && val >= 2 && val <= 22) {
       setNumTeams(val);
       if (draftPosition > val) setDraftPosition(val);
     }
