@@ -15,7 +15,7 @@ const PlayerCard: React.FC<{ player: Player }> = ({ player }) => {
     <>
       <div
   style={{
-    backgroundColor: "#D5FFE5", // mint green
+    backgroundColor: "#D5FFE5",
     borderRadius: "12px",
     padding: "0.8rem",
     width: "100%",
