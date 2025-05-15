@@ -6,7 +6,9 @@ from handlers import (
     make_add_player_handler,
     make_get_player_handler,
     make_fetch_all_players_handler,
-    make_remove_player_handler
+    make_remove_player_handler,
+    make_fetch_user_players_handler,
+    make_fetch_opp_players_handler
 )
 
 bye_weeks = {
@@ -54,7 +56,7 @@ def create_app():
     #2024 data
     for player in data2024.player_population[:400]:
         bye = bye_weeks.get(player.proTeam, 0)
-        new_player = Player(player.name, player.position, player.posRank, player.projected_avg_points, bye)
+        new_player = Player(name=player.name, position=player.position, pos_rank=player.posRank, proj_points=player.projected_avg_points, bye=bye)
         organizer.add_player(new_player)
 
     user_team = {"QB": [], "WR": [], "RB": [], "TE": [], "D/ST": [], "K": []}
@@ -65,6 +67,8 @@ def create_app():
     app.route("/get-player", methods=["GET"])(make_get_player_handler(organizer))
     app.route("/remove-player", methods=["GET"])(make_remove_player_handler(organizer, user_team, opp_team))
     app.route("/fetch-all-players", methods=["GET"])(make_fetch_all_players_handler(organizer))
+    app.route("/fetch-user-players", methods=["GET"])(make_fetch_user_players_handler(user_team))
+    app.route("/fetch-opp-players", methods=["GET"])(make_fetch_opp_players_handler(opp_team))
 
     return app
 
