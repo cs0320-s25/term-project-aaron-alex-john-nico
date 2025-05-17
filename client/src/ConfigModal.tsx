@@ -1,5 +1,5 @@
 import React from "react";
-import { useDraft } from "./DraftContext"; // Adjust path as needed
+import { useDraft } from "./DraftContext";
 
 interface ModalProps {
   isOpen: boolean;

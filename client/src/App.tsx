@@ -1,4 +1,4 @@
-import { SignedIn, SignedOut, SignIn } from "@clerk/clerk-react";
+import { SignedIn, SignedOut, SignIn, SignInButton } from "@clerk/clerk-react";
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
@@ -13,7 +13,7 @@ function App() {
     <DraftBoard />
   </SignedIn>
   <SignedOut>
-    <SignIn />
+    <SignInButton />
   </SignedOut>
   </>
   );
