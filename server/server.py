@@ -9,7 +9,7 @@ from handlers import (
     make_remove_player_handler,
     make_fetch_user_players_handler,
     make_fetch_opp_players_handler,
-    make_fetch_best_player_handler
+    best_player_handler
 )
 
 bye_weeks = {
@@ -76,7 +76,7 @@ def create_app():
     app.route("/fetch-all-players", methods=["GET"])(make_fetch_all_players_handler(organizer))
     app.route("/fetch-user-players", methods=["GET"])(make_fetch_user_players_handler(user_team))
     app.route("/fetch-opp-players", methods=["GET"])(make_fetch_opp_players_handler(opp_team))
-    app.route("/best-player", methods=["GET"])(make_fetch_best_player_handler())
+    app.route("/best-player", methods=["GET"])(best_player_handler())
 
     return app
 

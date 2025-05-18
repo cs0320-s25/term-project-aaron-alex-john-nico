@@ -150,6 +150,7 @@ def save_roster_to_json(roster, filename='optimized_roster.json'):
         json.dump(roster, f, indent=4)
     print(f"Roster saved to {filename}")
 
+
 def add_dst_rankings(standings):
     """
     Adds hardcoded DST rankings to the standings dictionary.
@@ -168,14 +169,28 @@ def add_dst_rankings(standings):
     standings['DST'] = dst_players
     return standings
 
-if __name__ == "__main__":
+def get_roster():
     # Load standings from a JSON file.
-    with open('final_standings.json', 'r') as f:
-        standings = json.load(f)
+        with open('final_standings.json', 'r') as f:
+            standings = json.load(f)
 
-    # Add hardcoded DST rankings
-    standings = add_dst_rankings(standings)
+        # Add hardcoded DST rankings
+        standings = add_dst_rankings(standings)
 
-    player_scores, roster = calculate_player_scores(standings)
-    print(roster)
-    save_roster_to_json(roster)
+        player_scores, roster = calculate_player_scores(standings)
+        return(roster)
+
+if __name__ == "__main__":
+    if False:
+        # Load standings from a JSON file.
+        with open('final_standings.json', 'r') as f:
+            standings = json.load(f)
+
+        # Add hardcoded DST rankings
+        standings = add_dst_rankings(standings)
+
+        player_scores, roster = calculate_player_scores(standings)
+        print(roster)
+        save_roster_to_json(roster)
+
+print(get_roster())
