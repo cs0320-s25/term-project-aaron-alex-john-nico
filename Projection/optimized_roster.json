@@ -1,0 +1,121 @@
+[
+    {
+        "name": "Josh Allen",
+        "position": "QB",
+        "projected_points": 381.2096000000002,
+        "adjusted_score": 431.2096000000002,
+        "team": "BUF"
+    },
+    {
+        "name": "Cooper Kupp",
+        "position": "WR",
+        "projected_points": 379.3534,
+        "adjusted_score": 429.3534,
+        "team": "LAR"
+    },
+    {
+        "name": "Andrew Luck",
+        "position": "QB",
+        "projected_points": 369.0255999999999,
+        "adjusted_score": 369.0255999999999,
+        "team": "IND"
+    },
+    {
+        "name": "Michael Thomas",
+        "position": "WR",
+        "projected_points": 365.5013999999999,
+        "adjusted_score": 415.5013999999999,
+        "team": "NOR"
+    },
+    {
+        "name": "Antonio Brown",
+        "position": "WR",
+        "projected_points": 363.25840000000017,
+        "adjusted_score": 363.25840000000017,
+        "team": "TAM"
+    },
+    {
+        "name": "Alvin Kamara",
+        "position": "RB",
+        "projected_points": 362.3904,
+        "adjusted_score": 332.3904,
+        "team": "NOR"
+    },
+    {
+        "name": "Joe Burrow",
+        "position": "QB",
+        "projected_points": 356.89340000000004,
+        "adjusted_score": 356.89340000000004,
+        "team": "CIN"
+    },
+    {
+        "name": "Matt Forte",
+        "position": "RB",
+        "projected_points": 338.97700000000003,
+        "adjusted_score": 388.97700000000003,
+        "team": "NYJ"
+    },
+    {
+        "name": "Matt Forte",
+        "position": "RB",
+        "projected_points": 336.20899999999995,
+        "adjusted_score": 256.20899999999995,
+        "team": "NYJ"
+    },
+    {
+        "name": "Devonta Freeman",
+        "position": "RB",
+        "projected_points": 335.7325999999999,
+        "adjusted_score": 335.7325999999999,
+        "team": "BAL"
+    },
+    {
+        "name": "Davante Adams",
+        "position": "WR",
+        "projected_points": 335.0090000000002,
+        "adjusted_score": 335.0090000000002,
+        "team": "GNB"
+    },
+    {
+        "name": "Delanie Walker",
+        "position": "TE",
+        "projected_points": 240.79319999999993,
+        "adjusted_score": 290.79319999999996,
+        "team": "TEN"
+    },
+    {
+        "name": "Travis Kelce",
+        "position": "TE",
+        "projected_points": 236.38900000000015,
+        "adjusted_score": 236.38900000000015,
+        "team": "KAN"
+    },
+    {
+        "name": "Den DST",
+        "position": "DST",
+        "projected_points": 33,
+        "adjusted_score": 83,
+        "team": "Den"
+    },
+    {
+        "name": "Hou DST",
+        "position": "DST",
+        "projected_points": 32,
+        "adjusted_score": 32,
+        "team": "Hou"
+    },
+    {
+        "name": "Wil Lutz",
+        "position": "K",
+        "projected_points": 1.4270000000000018,
+        "adjusted_score": 51.427,
+        "team": "Unknown"
+    },
+    {
+        "name": "DeAndre Hopkins",
+        "position": "FLEX",
+        "projected_points": 334.8910000000002,
+        "adjusted_score": 334.8910000000002,
+        "team": "ARI"
+    }
+]
