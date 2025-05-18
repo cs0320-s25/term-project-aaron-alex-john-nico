@@ -10,9 +10,9 @@ league_s2 = os.getenv("ESPN_S2")
 
 from espn_api.football import League  
 
-# league = League(league_id=4572608, year=2024, espn_s2=league_s2, swid=league_swid)  # Replace with your league ID
+league = League(league_id=4572608, year=2024, espn_s2=league_s2, swid=league_swid)  # Replace with your league ID
 
-league2025 = League(league_id=1246266673, year = 2025, espn_s2=league_s2, swid=league_swid)
+#league2025 = League(league_id=1246266673, year = 2025, espn_s2=league_s2, swid=league_swid)
 
 
 # #data = league.get_team_data()
@@ -51,7 +51,9 @@ league2025 = League(league_id=1246266673, year = 2025, espn_s2=league_s2, swid=l
 # for player in free_agents_2025:
 #     print(f"{player.name} - {player.position} - PosRank: {player.posRank} - ProjPts: {player.projected_avg_points}")
 
-player_population = league2025.free_agents(size= 400)
+player_population = league.free_agents(size= 500)
+for player in player_population:
+    print(f"{player.name} - {player.position} - Team: {player.proTeam} - PosRank: {player.posRank} - ProjPts: {player.projected_avg_points}")
 
 #With this, we can get the top n free agents based on their projected points and position rank. I'm thinking we create a player dataclass
 #that has all of this information? Then we can take it and sort based on pos rank, make groups of each position, etc. 

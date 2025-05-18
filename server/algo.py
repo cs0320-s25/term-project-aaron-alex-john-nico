@@ -181,7 +181,6 @@ def get_roster():
         return(roster)
 
 if __name__ == "__main__":
-    if False:
         # Load standings from a JSON file.
         with open('final_standings.json', 'r') as f:
             standings = json.load(f)
