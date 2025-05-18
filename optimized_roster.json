@@ -14,39 +14,11 @@
         "team": "LAR"
     },
     {
-        "name": "Andrew Luck",
-        "position": "QB",
-        "projected_points": 369.0255999999999,
-        "adjusted_score": 369.0255999999999,
-        "team": "IND"
-    },
-    {
         "name": "Michael Thomas",
         "position": "WR",
         "projected_points": 365.5013999999999,
         "adjusted_score": 415.5013999999999,
         "team": "NOR"
-    },
-    {
-        "name": "Antonio Brown",
-        "position": "WR",
-        "projected_points": 363.25840000000017,
-        "adjusted_score": 363.25840000000017,
-        "team": "TAM"
-    },
-    {
-        "name": "Alvin Kamara",
-        "position": "RB",
-        "projected_points": 362.3904,
-        "adjusted_score": 332.3904,
-        "team": "NOR"
-    },
-    {
-        "name": "Joe Burrow",
-        "position": "QB",
-        "projected_points": 356.89340000000004,
-        "adjusted_score": 356.89340000000004,
-        "team": "CIN"
     },
     {
         "name": "Matt Forte",
@@ -56,11 +28,25 @@
         "team": "NYJ"
     },
     {
-        "name": "Matt Forte",
-        "position": "RB",
-        "projected_points": 336.20899999999995,
-        "adjusted_score": 256.20899999999995,
-        "team": "NYJ"
+        "name": "Andrew Luck",
+        "position": "QB",
+        "projected_points": 369.0255999999999,
+        "adjusted_score": 369.0255999999999,
+        "team": "IND"
+    },
+    {
+        "name": "Antonio Brown",
+        "position": "WR",
+        "projected_points": 363.25840000000017,
+        "adjusted_score": 363.25840000000017,
+        "team": "TAM"
+    },
+    {
+        "name": "Joe Burrow",
+        "position": "QB",
+        "projected_points": 356.89340000000004,
+        "adjusted_score": 356.89340000000004,
+        "team": "CIN"
     },
     {
         "name": "Devonta Freeman",
@@ -77,10 +63,24 @@
         "team": "GNB"
     },
     {
-        "name": "Delanie Walker",
-        "position": "TE",
-        "projected_points": 240.79319999999993,
-        "adjusted_score": 290.79319999999996,
+        "name": "DeAndre Hopkins",
+        "position": "FLEX",
+        "projected_points": 334.8910000000002,
+        "adjusted_score": 334.8910000000002,
+        "team": "ARI"
+    },
+    {
+        "name": "Alvin Kamara",
+        "position": "RB",
+        "projected_points": 362.3904,
+        "adjusted_score": 332.3904,
+        "team": "NOR"
+    },
+    {
+        "name": "Derrick Henry",
+        "position": "RB",
+        "projected_points": 319.4265999999997,
+        "adjusted_score": 319.4265999999997,
         "team": "TEN"
     },
     {
@@ -91,6 +91,13 @@
         "team": "KAN"
     },
     {
+        "name": "Delanie Walker",
+        "position": "TE",
+        "projected_points": 240.79319999999993,
+        "adjusted_score": 210.79319999999996,
+        "team": "TEN"
+    },
+    {
         "name": "Den DST",
         "position": "DST",
         "projected_points": 33,
@@ -98,24 +105,10 @@
         "team": "Den"
     },
     {
-        "name": "Hou DST",
-        "position": "DST",
-        "projected_points": 32,
-        "adjusted_score": 32,
-        "team": "Hou"
-    },
-    {
         "name": "Wil Lutz",
         "position": "K",
         "projected_points": 1.4270000000000018,
         "adjusted_score": 51.427,
         "team": "Unknown"
-    },
-    {
-        "name": "DeAndre Hopkins",
-        "position": "FLEX",
-        "projected_points": 334.8910000000002,
-        "adjusted_score": 334.8910000000002,
-        "team": "ARI"
     }
 ]

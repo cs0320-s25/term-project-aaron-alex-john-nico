@@ -22,7 +22,7 @@ def requirements_met(roster):
     """
     if len(roster) != ROSTER_LIMIT:
         return False
-    # Count by 'position' as stored in the roster
+    # Count players by their "position" field (for FLEX the value is "FLEX")
     position_counts = Counter(player['position'] for player in roster)
     for position, limits in POSITION_REQUIREMENTS.items():
         count = position_counts.get(position, 0)
@@ -32,16 +32,18 @@ def requirements_met(roster):
 
 def calculate_player_scores(standings):
     """
-    Calculate adjusted scores for each player based on projected points, positional needs,
-    team composition, and penalties. Also ensures that the same player isn't added twice.
+    Calculates adjusted scores for each player and builds the roster.
+    A set is used to ensure no duplicate players are added.
+    After constructing the roster, it is sorted by adjusted_score (descending)
+    and trimmed to exactly ROSTER_LIMIT players.
     """
     player_scores = {}
     roster = []
     team_counts = defaultdict(int)
     position_counts = defaultdict(int)
-    selected_names = set()  # Tracks names of players already added
+    selected_names = set()  # Tracks names already added
 
-    # Flatten the standings dictionary into a list of players
+    # Flatten the standings dictionary into a list of players.
     all_players = []
     for position, players in standings.items():
         for player in players:
@@ -53,44 +55,35 @@ def calculate_player_scores(standings):
                 'team': team
             })
 
-    # Sort players by projected points descending
+    # Sort players by projected points descending.
     all_players.sort(key=lambda x: x['projected_points'], reverse=True)
 
+    # Main loop: add players while roster < ROSTER_LIMIT.
     for player in all_players:
         name = player['name']
         position = player['position']
         projected_points = player['projected_points']
         team = player['team']
 
-        # Skip if the player is already in the roster
         if name in selected_names:
             continue
-
-        # Skip if roster is full
         if len(roster) >= ROSTER_LIMIT:
             break
-
-        # Skip positions not defined in requirements
         if position not in POSITION_REQUIREMENTS:
             continue
 
-        # Determine if position requirement is needed
-        position_needed = False
-        if position_counts[position] < POSITION_REQUIREMENTS[position]['min']:
-            position_needed = True
-        elif position_counts[position] >= POSITION_REQUIREMENTS[position]['max']:
-            continue  # Skip if max limit reached
-
-        # Calculate adjusted score
-        adjusted_score = projected_points
-        if position_needed:
-            adjusted_score += 50  # Bonus for filling required position
-        if team_counts[team] > 0:
-            adjusted_score -= 80  # Penalty for same team players
+        # Do not exceed the positional maximum.
         if position_counts[position] >= POSITION_REQUIREMENTS[position]['max']:
-            adjusted_score -= 150  # Penalty for exceeding max position limit
+            continue
 
-        # Add player to roster if not already added
+        # Calculate adjusted score. Add bonus if the minimum for the position has not been met,
+        # and subtract a penalty if the same team is already represented.
+        adjusted_score = projected_points
+        if position_counts[position] < POSITION_REQUIREMENTS[position]['min']:
+            adjusted_score += 50  # bonus for filling a required slot
+        if team_counts[team] > 0:
+            adjusted_score -= 80  # penalty for duplicate team
+
         roster.append({
             'name': name,
             'position': position,
@@ -103,32 +96,29 @@ def calculate_player_scores(standings):
         team_counts[team] += 1
         player_scores[name] = adjusted_score
 
-    # Ensure mandatory positions are filled after max limits
+    # Ensure mandatory positions are filled if missing.
     mandatory_positions = ['K', 'DST', 'TE']
-    for mandatory_position in mandatory_positions:
-        if position_counts[mandatory_position] < POSITION_REQUIREMENTS[mandatory_position]['min']:
-            # Find the next available player for the mandatory position
+    for pos in mandatory_positions:
+        if position_counts[pos] < POSITION_REQUIREMENTS[pos]['min']:
             for player in all_players:
-                if (player['position'] == mandatory_position 
-                    and player['name'] not in selected_names):
+                if player['position'] == pos and player['name'] not in selected_names:
                     roster.append({
                         'name': player['name'],
-                        'position': player['position'],
+                        'position': pos,
                         'projected_points': player['projected_points'],
-                        'adjusted_score': player['projected_points'],
+                        'adjusted_score': player['projected_points'],  # no bonus applied here
                         'team': player['team']
                     })
                     selected_names.add(player['name'])
-                    position_counts[mandatory_position] += 1
+                    position_counts[pos] += 1
                     team_counts[player['team']] += 1
                     player_scores[player['name']] = player['projected_points']
                     break
 
-    # Add FLEX position if needed, ensuring no duplicate
+    # Add FLEX position if needed.
     if position_counts['FLEX'] < POSITION_REQUIREMENTS['FLEX']['min']:
         for player in all_players:
-            if (player['position'] in FLEX_ELIGIBLE 
-                and player['name'] not in selected_names):
+            if player['position'] in FLEX_ELIGIBLE and player['name'] not in selected_names:
                 roster.append({
                     'name': player['name'],
                     'position': 'FLEX',
@@ -142,7 +132,11 @@ def calculate_player_scores(standings):
                 player_scores[player['name']] = player['projected_points']
                 break
 
-    # Verify if the constructed roster meets all requirements
+    # Final sorting and trimming.
+    roster = sorted(roster, key=lambda player: player['adjusted_score'], reverse=True)
+    if len(roster) > ROSTER_LIMIT:
+        roster = roster[:ROSTER_LIMIT]
+
     if not requirements_met(roster):
         print("Constructed roster does not meet all requirements. Saving roster anyway.")
 
@@ -150,7 +144,7 @@ def calculate_player_scores(standings):
 
 def save_roster_to_json(roster, filename='optimized_roster.json'):
     """
-    Save the roster to a JSON file. If the file doesn't exist, create it.
+    Save the roster to a JSON file.
     """
     with open(filename, 'w') as f:
         json.dump(roster, f, indent=4)
@@ -174,9 +168,8 @@ def add_dst_rankings(standings):
     standings['DST'] = dst_players
     return standings
 
-# Example usage
 if __name__ == "__main__":
-    # Load standings from a JSON file
+    # Load standings from a JSON file.
     with open('final_standings.json', 'r') as f:
         standings = json.load(f)
 
@@ -184,5 +177,5 @@ if __name__ == "__main__":
     standings = add_dst_rankings(standings)
 
     player_scores, roster = calculate_player_scores(standings)
-    # Save the roster regardless of whether all requirements are met
+    print(roster)
     save_roster_to_json(roster)

@@ -1,5 +1,6 @@
 from flask import request, jsonify
 from players import PlayerOrganizer, Player
+import json
 
 def make_add_player_handler(organizer, user_team, opp_team):
     '''
@@ -178,3 +179,17 @@ def make_fetch_opp_players_handler(opp_team):
         }
         return jsonify(opp_players), 200
     return fetch_opp_players
+
+def make_fetch_best_player_handler():
+    def fetch_best_player():
+        try:
+            with open('optimized_roster.json', 'r') as f:
+                roster = json.load(f)
+            if roster and len(roster) > 0:
+                best_player = roster[0]  # Because the roster is sorted by adjusted_score (desc)
+                return jsonify(best_player), 200
+            else:
+                return jsonify({"message": "Roster is empty."}), 404
+        except Exception as e:
+            return jsonify({"message": "Error reading roster: " + str(e)}), 500
+    return fetch_best_player
