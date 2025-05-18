@@ -23,6 +23,7 @@ const PlayerCard: React.FC<{ player: Player }> = ({ player }) => {
     textAlign: "center",
     boxShadow: "0 2px 5px rgba(0,0,0,0.1)",
     fontFamily: "sans-serif",
+    cursor: "pointer",
   }}
 >
   <img

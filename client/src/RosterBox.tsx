@@ -1,13 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
+import { useDraft } from "./DraftContext";
+import { Player } from "./PlayerCard";
+import PlayerInfoModal from "./PlayerInfoModal";
 
 interface RosterSlotProps {
   position: string;
   labelColor: string;
+  player?: Player;
+  onClick?: () => void;
 }
 
-const RosterSlot: React.FC<RosterSlotProps> = ({ position, labelColor }) => {
+const RosterSlot: React.FC<RosterSlotProps> = ({ position, labelColor, player, onClick }) => {
   return (
     <div
+      onClick={player ? onClick : undefined}
       style={{
         display: "flex",
         alignItems: "center",
@@ -15,6 +21,7 @@ const RosterSlot: React.FC<RosterSlotProps> = ({ position, labelColor }) => {
         borderBottom: "1px solid #888",
         backgroundColor: "#1D2036",
         color: "#ccc",
+        cursor: player ? "pointer" : "default",
       }}
     >
       <div
@@ -32,12 +39,52 @@ const RosterSlot: React.FC<RosterSlotProps> = ({ position, labelColor }) => {
       >
         {position}
       </div>
-      <div>Empty</div>
+      <div>{player ? `${player.name} (${player.team})` : "Empty"}</div>
     </div>
   );
 };
 
 const RosterBox: React.FC = () => {
+  const { draftPosition, teamRosters } = useDraft();
+  const roster = teamRosters[draftPosition] || [];
+  const [selectedPlayer, setSelectedPlayer] = useState<Player | null>(null);
+
+  const slotCounts: Record<string, number> = {
+    QB: 1,
+    RB: 2,
+    WR: 2,
+    TE: 1,
+    FLEX: 1,
+    DEF: 1,
+    K: 1,
+    BENCH: 5,
+  };
+
+  const filled: Record<string, Player[]> = {
+    QB: [],
+    RB: [],
+    WR: [],
+    TE: [],
+    FLEX: [],
+    DEF: [],
+    K: [],
+    BENCH: [],
+  };
+
+  for (const player of roster) {
+    const pos = player.position;
+    if (filled[pos] && filled[pos].length < slotCounts[pos]) {
+      filled[pos].push(player);
+    } else if (
+      (pos === "RB" || pos === "WR" || pos === "TE") &&
+      filled["FLEX"].length < slotCounts["FLEX"]
+    ) {
+      filled["FLEX"].push(player);
+    } else if (filled["BENCH"].length < slotCounts["BENCH"]) {
+      filled["BENCH"].push(player);
+    }
+  }
+
   const rosterSlots = [
     { pos: "QB", color: "#FF3C7E" },
     { pos: "RB", color: "#2EDFC2" },
@@ -51,21 +98,42 @@ const RosterBox: React.FC = () => {
     ...Array(5).fill({ pos: "BENCH", color: "#4B5563" }),
   ];
 
+  const slotFillCounts: Record<string, number> = {};
+
   return (
-    <div
-      style={{
-        backgroundColor: "#ACACAC",
-        width: "40vw",
-        height: "70vh",
-        flexShrink: 0,
-        overflowY: "scroll",
-        overflowX: "hidden",
-      }}
-    >
-      {rosterSlots.map((slot, index) => (
-        <RosterSlot key={index} position={slot.pos} labelColor={slot.color} />
-      ))}
-    </div>
+    <>
+      <div
+        style={{
+          backgroundColor: "#ACACAC",
+          width: "40vw",
+          height: "70vh",
+          flexShrink: 0,
+          overflowY: "scroll",
+          overflowX: "hidden",
+        }}
+      >
+        {rosterSlots.map((slot, index) => {
+          const count = slotFillCounts[slot.pos] || 0;
+          const player = filled[slot.pos][count];
+          slotFillCounts[slot.pos] = count + 1;
+          return (
+            <RosterSlot
+              key={index}
+              position={slot.pos}
+              labelColor={slot.color}
+              player={player}
+              onClick={() => player && setSelectedPlayer(player)}
+            />
+          );
+        })}
+      </div>
+      {selectedPlayer && (
+        <PlayerInfoModal
+          player={selectedPlayer}
+          onClose={() => setSelectedPlayer(null)}
+        />
+      )}
+    </>
   );
 };
 
