@@ -1,7 +1,7 @@
 from flask import Flask
 from flask_cors import CORS
 from players import Player, PlayerOrganizer
-import data2024
+import data2024 as data2024
 from handlers import (
     make_add_player_handler,
     make_get_player_handler,
