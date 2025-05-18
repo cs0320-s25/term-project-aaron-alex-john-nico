@@ -5,6 +5,14 @@ load_dotenv()
 league_swid = os.getenv("SWID")
 league_s2 = os.getenv("ESPN_S2")
 
+from espn_api.football import League  
+
+league = League(league_id=4572608, year=2024, espn_s2=league_s2, swid=league_swid) 
+
+player_population = league.free_agents(size= 500)
+for player in player_population:
+    print(f"{player.name} - {player.position} - Team: {player.proTeam} - PosRank: {player.posRank} - ProjPts: {player.projected_avg_points}")
+
 #install: pip install python-dotenv
 #pip install espn_api
 

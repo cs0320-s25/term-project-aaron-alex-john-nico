@@ -1,6 +1,10 @@
 import json
 import os
 from collections import defaultdict, Counter
+from espn_api.football import League  
+
+# List of players to exclude
+EXCLUDED_PLAYERS = []  
 
 # Define roster requirements
 ROSTER_LIMIT = 16
@@ -22,7 +26,6 @@ def requirements_met(roster):
     """
     if len(roster) != ROSTER_LIMIT:
         return False
-    # Count players by their "position" field (for FLEX the value is "FLEX")
     position_counts = Counter(player['position'] for player in roster)
     for position, limits in POSITION_REQUIREMENTS.items():
         count = position_counts.get(position, 0)
@@ -34,6 +37,7 @@ def calculate_player_scores(standings):
     """
     Calculates adjusted scores for each player and builds the roster.
     A set is used to ensure no duplicate players are added.
+    Excludes any players listed in EXCLUDED_PLAYERS.
     After constructing the roster, it is sorted by adjusted_score (descending)
     and trimmed to exactly ROSTER_LIMIT players.
     """
@@ -48,6 +52,8 @@ def calculate_player_scores(standings):
     for position, players in standings.items():
         for player in players:
             name, projected_points, team = player
+            if name in EXCLUDED_PLAYERS:
+                continue  # Skip excluded players
             all_players.append({
                 'name': name,
                 'position': position,
@@ -65,7 +71,7 @@ def calculate_player_scores(standings):
         projected_points = player['projected_points']
         team = player['team']
 
-        if name in selected_names:
+        if name in selected_names or name in EXCLUDED_PLAYERS:
             continue
         if len(roster) >= ROSTER_LIMIT:
             break
@@ -101,7 +107,7 @@ def calculate_player_scores(standings):
     for pos in mandatory_positions:
         if position_counts[pos] < POSITION_REQUIREMENTS[pos]['min']:
             for player in all_players:
-                if player['position'] == pos and player['name'] not in selected_names:
+                if player['position'] == pos and player['name'] not in selected_names and player['name'] not in EXCLUDED_PLAYERS:
                     roster.append({
                         'name': player['name'],
                         'position': pos,
@@ -118,7 +124,7 @@ def calculate_player_scores(standings):
     # Add FLEX position if needed.
     if position_counts['FLEX'] < POSITION_REQUIREMENTS['FLEX']['min']:
         for player in all_players:
-            if player['position'] in FLEX_ELIGIBLE and player['name'] not in selected_names:
+            if player['position'] in FLEX_ELIGIBLE and player['name'] not in selected_names and player['name'] not in EXCLUDED_PLAYERS:
                 roster.append({
                     'name': player['name'],
                     'position': 'FLEX',
@@ -170,26 +176,20 @@ def add_dst_rankings(standings):
     return standings
 
 def get_roster():
-    # Load standings from a JSON file.
-        with open('final_standings.json', 'r') as f:
-            standings = json.load(f)
+    with open('final_standings.json', 'r') as f:
+        standings = json.load(f)
 
-        # Add hardcoded DST rankings
-        standings = add_dst_rankings(standings)
-
-        player_scores, roster = calculate_player_scores(standings)
-        return(roster)
+    standings = add_dst_rankings(standings)
+    player_scores, roster = calculate_player_scores(standings)
+    return roster
 
 if __name__ == "__main__":
-        # Load standings from a JSON file.
-        with open('final_standings.json', 'r') as f:
-            standings = json.load(f)
+    with open('final_standings.json', 'r') as f:
+        standings = json.load(f)
 
-        # Add hardcoded DST rankings
-        standings = add_dst_rankings(standings)
-
-        player_scores, roster = calculate_player_scores(standings)
-        print(roster)
-        save_roster_to_json(roster)
+    standings = add_dst_rankings(standings)
+    player_scores, roster = calculate_player_scores(standings)
+    print(roster)
+    save_roster_to_json(roster)
 
 print(get_roster())

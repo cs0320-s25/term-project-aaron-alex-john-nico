@@ -1,9 +1,9 @@
 [
     {
-        "name": "Josh Allen",
+        "name": "Sam Darnold",
         "position": "QB",
-        "projected_points": 309.37340000000006,
-        "adjusted_score": 359.37340000000006,
+        "projected_points": 301.9784000000001,
+        "adjusted_score": 351.9784000000001,
         "team": "Unknown"
     },
     {
@@ -35,13 +35,6 @@
         "team": "Unknown"
     },
     {
-        "name": "Sam Darnold",
-        "position": "QB",
-        "projected_points": 301.9784000000001,
-        "adjusted_score": 221.97840000000008,
-        "team": "Unknown"
-    },
-    {
         "name": "Najee Harris",
         "position": "FLEX",
         "projected_points": 215.64040000000006,
@@ -60,6 +53,13 @@
         "position": "QB",
         "projected_points": 279.39200000000034,
         "adjusted_score": 199.39200000000034,
+        "team": "Unknown"
+    },
+    {
+        "name": "Caleb Williams",
+        "position": "QB",
+        "projected_points": 275.2840000000003,
+        "adjusted_score": 195.28400000000028,
         "team": "Unknown"
     },
     {

@@ -6,6 +6,18 @@ from sklearn.ensemble import RandomForestRegressor
 from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
 import matplotlib.pyplot as plt
 import numpy as np
+import os
+from dotenv import load_dotenv
+from espn_api.football import League  
+
+# Load environment variables
+load_dotenv()
+league_swid = os.getenv("SWID")
+league_s2 = os.getenv("ESPN_S2")
+
+# Fetch free agent data from ESPN
+league = League(league_id=4572608, year=2024, espn_s2=league_s2, swid=league_swid) 
+espn_free_agents = {player.name: player.proTeam for player in league.free_agents(size=500)}
 
 # Load Data
 data = pd.read_csv('server/2015-24_seasonal_data.csv')
@@ -30,6 +42,11 @@ original_positions = data['position']
 original_names = data['player_display_name']
 original_teams = data['team'] if 'team' in data.columns else pd.Series(['Unknown'] * len(data))
 
+# Update "Unknown" teams using ESPN free agents data
+updated_teams = [
+    espn_free_agents.get(name, team) for name, team in zip(original_names, original_teams)
+]
+
 # Drop non-numeric columns not needed for modeling
 data_model = data.drop(columns=['player_id', 'position', 'player_display_name', 'team'], errors='ignore')
 
@@ -39,7 +56,7 @@ y = data_model['fantasy_points_ppr']
 
 # Train-Test Split
 X_train, X_test, y_train, y_test, pos_train, pos_test, name_train, name_test, team_train, team_test = train_test_split(
-    X, y, original_positions, original_names, original_teams, test_size=0.2, random_state=42
+    X, y, original_positions, original_names, updated_teams, test_size=0.2, random_state=42
 )
 
 # Scaling Features
@@ -64,7 +81,7 @@ results = pd.DataFrame(X_test, columns=X.columns)
 results['predicted_points'] = y_pred
 results['position'] = pos_test.values
 results['player_display_name'] = name_test.values
-results['team'] = team_test.values
+results['team'] = pd.Series(team_test)
 results['season'] = 2024  # Since we've filtered for 2024, we can assign this directly
 
 # Display top 3 scorers per position
