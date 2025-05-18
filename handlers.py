@@ -1,9 +1,21 @@
 from flask import request, jsonify
 from players import PlayerOrganizer, Player
 
-# Think this is good for now, basically just adds a given player either to your team or to the opposing team while also removing them from the organizer
 def make_add_player_handler(organizer, user_team, opp_team):
+    '''
+    Arguments:
+        - organizer: the PlayerOrganizer that you retrieve players from
+        - user_team: the user's team to add to
+        - opp_team: the opponent's team to add to
+    
+    Returns: the add_player handler
+
+    Makes the handler to add players to specific teams.
+    '''
     def add_player():
+        '''
+        Handler to add a player to the user or opponent team from the PlayerOrganizer.
+        '''
         name = request.args.get("name")
         position = request.args.get("position")
         user_str = request.args.get("user")
@@ -28,6 +40,14 @@ def make_add_player_handler(organizer, user_team, opp_team):
     return add_player
 
 def make_get_player_handler(organizer: PlayerOrganizer):
+    '''
+    Arguments:
+        - organizer: the PlayerOrganizer that you get players from
+    
+    Returns: the get_player handler
+
+    Makes the handler to retrieve a player from the PlayerOrganizer.
+    '''
     def get_player():
         position = request.args.get("position")
         name = request.args.get("name")
@@ -44,6 +64,16 @@ def make_get_player_handler(organizer: PlayerOrganizer):
     return get_player
 
 def make_remove_player_handler(organizer, user_team, opp_team):
+    '''
+    Arguments:
+        - organizer: the PlayerOrganizer that you retrieve players from
+        - user_team: the user's team to remove from
+        - opp_team: the opponent's team to remove from
+    
+    Returns: the remove_player handler
+
+    Makes the handler to remove players from a specific team.
+    '''
     def remove_player():
         name = request.args.get("name")
         position = request.args.get("position")
@@ -77,21 +107,47 @@ def make_remove_player_handler(organizer, user_team, opp_team):
         
     return remove_player
 
-# I think this one is fine for now, basically just returns all the players in the organizer
 def make_fetch_all_players_handler(organizer: PlayerOrganizer):
+    '''
+    Arguments:
+        - organizer: the PlayerOrganizer that you retrieve players from
+    
+    Returns: the fetch_all_players handler
+
+    Makes the handler to fetch all the players from the PlayerOrganizer.
+    '''
     def fetch_all_players():
+        '''
+        Handler that fetches all the players from the PlayerOrganizer.
+
+        * Returns a dictionary with key values of positions. At each position is a heap where the players
+          are ordered py position rank. Each player object is converted into a dictionary with all of their corresponding
+          values, so all player information remains accessible
+        '''
         all_players = {
             pos: [p.__dict__ for p in sorted(queue)]
             for pos, queue in organizer.player_map.items()
         }
         return jsonify(all_players), 200
     return fetch_all_players
-    # This will return a dictionary with key values of positions. At each position is a heap where the players
-    # are ordered py position rank. Each player object is converted into a dictionary with all of their corresponding
-    # values, so all player information is accessible from the frontend
 
 def make_fetch_user_players_handler(user_team):
+    '''
+    Arguments:
+        - organizer: the user's team that you retrieve players from
+    
+    Returns: the fetch_user_players handler
+
+    Makes the handler to fetch all the players from the user's team.
+    '''
     def fetch_user_players():
+        '''
+        Handler that fetches all the players from the user's team.
+
+        * Returns a dictionary with key values of positions. At each position is a heap where the players
+          are ordered py position rank. Each player object is converted into a dictionary with all of their corresponding
+          values, so all player information remains accessible
+        '''
         user_players = {
             pos: [p.__dict__ for p in sorted(queue)]
             for pos, queue in user_team.items()
@@ -100,7 +156,22 @@ def make_fetch_user_players_handler(user_team):
     return fetch_user_players
 
 def make_fetch_opp_players_handler(opp_team):
+    '''
+    Arguments:
+        - opp_team: the opponent's team that you retrieve players from
+    
+    Returns: the fetch_opp_players handler
+
+    Makes the handler to fetch all the players from the opponent's team.
+    '''
     def fetch_opp_players():
+        '''
+        Handler that fetches all the players from the opponent's team.
+
+        * Returns a dictionary with key values of positions. At each position is a heap where the players
+          are ordered py position rank. Each player object is converted into a dictionary with all of their corresponding
+          values, so all player information remains accessible
+        '''
         opp_players = {
             pos: [p.__dict__ for p in sorted(queue)]
             for pos, queue in opp_team.items()

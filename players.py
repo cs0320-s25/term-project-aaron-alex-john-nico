@@ -58,7 +58,7 @@ class PlayerOrganizer:
 
         while queue:
             player = heapq.heappop(queue)
-            if player.name == name:
+            if player.name.lower() == name.lower():
                 found = True
                 removed_player = player
                 continue

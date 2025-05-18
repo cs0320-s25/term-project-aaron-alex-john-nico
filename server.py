@@ -53,8 +53,8 @@ def create_app():
 
     # Populate organizer
     organizer = PlayerOrganizer()
-    #2024 data
-    for player in data2024.player_population[:400]:
+    # 2024 data
+    for player in data2024.player_population:
         bye = bye_weeks.get(player.proTeam, 0)
         new_player = Player(name=player.name, position=player.position, pos_rank=player.posRank, proj_points=player.projected_avg_points, bye=bye)
         organizer.add_player(new_player)
