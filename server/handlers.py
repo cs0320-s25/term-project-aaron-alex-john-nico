@@ -183,9 +183,9 @@ def make_fetch_opp_players_handler(opp_team):
         return jsonify(opp_players), 200
     return fetch_opp_players
 
-
+exclude = ["Josh Allen"]
 def best_player_handler():
     def fetch_best_player():
-        players = get_roster()
+        players = get_roster(exclude)
         return jsonify(players[0]), 200 
     return fetch_best_player

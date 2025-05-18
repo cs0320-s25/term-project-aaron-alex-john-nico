@@ -3,9 +3,6 @@ import os
 from collections import defaultdict, Counter
 from espn_api.football import League  
 
-# List of players to exclude
-EXCLUDED_PLAYERS = []  
-
 # Define roster requirements
 ROSTER_LIMIT = 16
 POSITION_REQUIREMENTS = {
@@ -21,9 +18,7 @@ POSITION_REQUIREMENTS = {
 FLEX_ELIGIBLE = {'RB', 'WR', 'TE'}
 
 def requirements_met(roster):
-    """
-    Checks if the roster meets the specified positional requirements and constraints.
-    """
+    """Checks if the roster meets the specified positional requirements and constraints."""
     if len(roster) != ROSTER_LIMIT:
         return False
     position_counts = Counter(player['position'] for player in roster)
@@ -33,14 +28,8 @@ def requirements_met(roster):
             return False
     return True
 
-def calculate_player_scores(standings):
-    """
-    Calculates adjusted scores for each player and builds the roster.
-    A set is used to ensure no duplicate players are added.
-    Excludes any players listed in EXCLUDED_PLAYERS.
-    After constructing the roster, it is sorted by adjusted_score (descending)
-    and trimmed to exactly ROSTER_LIMIT players.
-    """
+def calculate_player_scores(standings, excluded_players):
+    """Calculates adjusted scores for each player and builds the roster. Excludes players from the provided list."""
     player_scores = {}
     roster = []
     team_counts = defaultdict(int)
@@ -52,7 +41,7 @@ def calculate_player_scores(standings):
     for position, players in standings.items():
         for player in players:
             name, projected_points, team = player
-            if name in EXCLUDED_PLAYERS:
+            if name in excluded_players:
                 continue  # Skip excluded players
             all_players.append({
                 'name': name,
@@ -71,7 +60,7 @@ def calculate_player_scores(standings):
         projected_points = player['projected_points']
         team = player['team']
 
-        if name in selected_names or name in EXCLUDED_PLAYERS:
+        if name in selected_names or name in excluded_players:
             continue
         if len(roster) >= ROSTER_LIMIT:
             break
@@ -107,7 +96,7 @@ def calculate_player_scores(standings):
     for pos in mandatory_positions:
         if position_counts[pos] < POSITION_REQUIREMENTS[pos]['min']:
             for player in all_players:
-                if player['position'] == pos and player['name'] not in selected_names and player['name'] not in EXCLUDED_PLAYERS:
+                if player['position'] == pos and player['name'] not in selected_names and player['name'] not in excluded_players:
                     roster.append({
                         'name': player['name'],
                         'position': pos,
@@ -124,7 +113,7 @@ def calculate_player_scores(standings):
     # Add FLEX position if needed.
     if position_counts['FLEX'] < POSITION_REQUIREMENTS['FLEX']['min']:
         for player in all_players:
-            if player['position'] in FLEX_ELIGIBLE and player['name'] not in selected_names and player['name'] not in EXCLUDED_PLAYERS:
+            if player['position'] in FLEX_ELIGIBLE and player['name'] not in selected_names and player['name'] not in excluded_players:
                 roster.append({
                     'name': player['name'],
                     'position': 'FLEX',
@@ -149,18 +138,13 @@ def calculate_player_scores(standings):
     return player_scores, roster
 
 def save_roster_to_json(roster, filename='optimized_roster.json'):
-    """
-    Save the roster to a JSON file.
-    """
+    """Save the roster to a JSON file."""
     with open(filename, 'w') as f:
         json.dump(roster, f, indent=4)
     print(f"Roster saved to {filename}")
 
-
 def add_dst_rankings(standings):
-    """
-    Adds hardcoded DST rankings to the standings dictionary.
-    """
+    """Adds hardcoded DST rankings to the standings dictionary."""
     dst_teams = [
         'Den', 'Hou', 'Phi', 'Bal', 'Min', 'Det', 'Sea', 'Gre', 'Dal', 'Buf',
         'Kan', 'Cle', 'LAC', 'NYG', 'Ari', 'LAR', 'Pit', 'Ind', 'Chi', 'SF',
@@ -175,12 +159,19 @@ def add_dst_rankings(standings):
     standings['DST'] = dst_players
     return standings
 
-def get_roster():
+def get_roster(excluded_players=None):
+    """
+    Generates the roster while allowing exclusion of specific players.
+    :param excluded_players: List of player names to exclude from the final roster.
+    """
+    if excluded_players is None:
+        excluded_players = []  # Default to an empty list if no exclusions are given
+
     with open('final_standings.json', 'r') as f:
         standings = json.load(f)
 
     standings = add_dst_rankings(standings)
-    player_scores, roster = calculate_player_scores(standings)
+    player_scores, roster = calculate_player_scores(standings, excluded_players)
     return roster
 
 if __name__ == "__main__":
@@ -188,8 +179,10 @@ if __name__ == "__main__":
         standings = json.load(f)
 
     standings = add_dst_rankings(standings)
-    player_scores, roster = calculate_player_scores(standings)
+    player_scores, roster = calculate_player_scores(standings, [])
     print(roster)
     save_roster_to_json(roster)
 
-print(get_roster())
+# Example usage
+excluded_players_list = ["Josh Allen", "Davante Adams"]  # Example list of players to exclude
+print(get_roster(excluded_players_list))
