@@ -6,10 +6,9 @@ import { Player } from "./PlayerCard";
 const PlayerBox: React.FC = () => {
   const {
     availablePlayers,
-    setAvailablePlayers,
-    teamRosters,
-    setTeamRosters,
+    makePick,
     draftPosition,
+    isDraftComplete,
   } = useDraft();
 
   const [confirmingPlayer, setConfirmingPlayer] = useState<Player | null>(null);
@@ -17,15 +16,7 @@ const PlayerBox: React.FC = () => {
 
   const confirmDraft = () => {
     if (confirmingIndex === null || !confirmingPlayer) return;
-
-    const newAvailable = [...availablePlayers];
-    newAvailable.splice(confirmingIndex, 1);
-    setAvailablePlayers(newAvailable);
-
-    const updatedRosters = [...teamRosters];
-    updatedRosters[draftPosition] = [...updatedRosters[draftPosition], confirmingPlayer];
-    setTeamRosters(updatedRosters);
-
+    makePick(confirmingPlayer, confirmingIndex);
     setConfirmingPlayer(null);
     setConfirmingIndex(null);
   };
@@ -51,8 +42,10 @@ const PlayerBox: React.FC = () => {
           <div
             key={index}
             onClick={() => {
-              setConfirmingPlayer(player);
-              setConfirmingIndex(index);
+              if (!isDraftComplete) {
+                setConfirmingPlayer(player);
+                setConfirmingIndex(index);
+              }
             }}
           >
             <PlayerCard player={player} />
