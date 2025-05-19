@@ -1,6 +1,5 @@
 import React, { createContext, useContext, useEffect, useState } from "react";
 import { Player } from "./PlayerCard";
-import { mockPlayers } from "./data/mockplayers";
 
 interface DraftContextType {
   draftPosition: number;
@@ -18,7 +17,7 @@ const DraftContext = createContext<DraftContextType | undefined>(undefined);
 
 export const DraftProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [draftPosition, setDraftPosition] = useState(0);
-  const [availablePlayers, setAvailablePlayers] = useState<Player[]>(mockPlayers);
+  const [availablePlayers, setAvailablePlayers] = useState<Player[]>([]);
   const [numTeams, setNumTeams] = useState<number>(4);
   const [teamRosters, setTeamRosters] = useState<Player[][]>(
     Array.from({ length: 4 }, () => [])
@@ -33,8 +32,8 @@ export const DraftProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     const round = Math.floor(pickNumber / numTeams);
     const indexInRound = pickNumber % numTeams;
     return round % 2 === 0
-      ? indexInRound                 // left to right
-      : numTeams - 1 - indexInRound; // right to left
+      ? indexInRound
+      : numTeams - 1 - indexInRound;
   })();
 
   const makePick = (player: Player, index: number) => {
@@ -55,6 +54,20 @@ export const DraftProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     setTeamRosters(Array.from({ length: numTeams }, () => []));
     setPickNumber(0);
   }, [numTeams]);
+
+  useEffect(() => {
+    const fetchPlayers = async () => {
+      try {
+        const res = await fetch("http://localhost:5000/api/players");
+        const data = await res.json();
+        setAvailablePlayers(data);
+      } catch (err) {
+        console.error("Failed to fetch players:", err);
+      }
+    };
+
+    fetchPlayers();
+  }, []);
 
   return (
     <DraftContext.Provider
