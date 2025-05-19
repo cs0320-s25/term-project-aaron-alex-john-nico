@@ -1,6 +1,7 @@
 from flask import request, jsonify
 from algo import get_roster
 
+
 def make_add_player_handler(available_players, user_team, opp_team):
     '''
     Arguments:

@@ -170,7 +170,6 @@ def add_dst_rankings(standings):
     points = 33
     for team in dst_teams:
         dst_players.append([team + ' DST', points, team])
-        points -= 1
     standings['DST'] = dst_players
     return standings
 

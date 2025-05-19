@@ -10,6 +10,7 @@ from handlers import (
     best_player_handler
 )
 import playerPicker
+import pandas as pd
 
 
 def load_data():
@@ -30,6 +31,46 @@ def load_data():
         on='player_display_name',
         how='left'  # keeps all players in `data`, even if not found in `standings`
     )
+
+
+    # Add DST teams
+    dst_teams = [
+        'Den', 'Hou', 'Phi', 'Bal', 'Min', 'Det', 'Sea', 'Gre', 'Dal', 'Buf',
+        'Kan', 'Cle', 'LAC', 'NYG', 'Ari', 'LAR', 'Pit', 'Ind', 'Chi', 'SF',
+        'Mia', 'NYJ', 'TB', 'Was', 'NE', 'JAX', 'LV', 'ATL', 'CIN', 'CAR',
+        'NO', 'TEN'
+    ]
+
+    # Create a DataFrame for DST entries
+    dst_data = pd.DataFrame([{
+        "attempts": 0,
+        "carries": 0,
+        "games": 0,
+        "interceptions": 0,
+        "passing_tds": 0,
+        "passing_yards": 0,
+        "player_display_name": f"{team} DST",
+        "player_display_name_encoded": 0,  # Will be encoded later if needed
+        "player_id": f"{team}_DST",
+        "position": "DST",
+        "position_encoded": 0,  # Will be encoded later if needed
+        "predicted_points": 33,
+        "receiving_fumbles": 0,
+        "receiving_tds": 0,
+        "receiving_yards": 0,
+        "receptions": 0,
+        "rushing_fumbles": 0,
+        "rushing_tds": 0,
+        "rushing_yards": 0,
+        "sack_fumbles": 0,
+        "season": 2024,
+        "targets": 0,
+        "team": team
+    } for team in dst_teams])
+
+    # Combine player and DST data
+    data = pd.concat([data, dst_data], ignore_index=True)
+
     return data
 
 def create_app():
