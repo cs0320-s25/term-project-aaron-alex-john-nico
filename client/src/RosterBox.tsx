@@ -49,7 +49,7 @@ const RosterSlot: React.FC<RosterSlotProps> = ({ position, labelColor, player, o
         }}
       >
         {player
-          ? `${player.name} (Rank: ${player.pos_rank}, Pts: ${player.proj_points.toFixed(1)}, Bye: ${player.bye})`
+          ? `${player.name} (Proj Pts: ${player.proj_points.toFixed(1)}})`
           : "Empty"}
       </div>
     </div>
