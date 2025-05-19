@@ -24,10 +24,10 @@ class BackendTestCase(unittest.TestCase):
         self.assertGreater(len(data), 0, "The players list should not be empty")
 
         required_keys = {
-            "player_display_name": str,
+            "name": str,
             "position": str,
-            "season": int,
-            "predicted_points": (int, float)
+            "bye": int,
+            "proj_points": (int, float)
         }
 
         for player in data:
