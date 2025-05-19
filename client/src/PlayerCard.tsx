@@ -31,7 +31,7 @@ const PlayerCard: React.FC<{ player: Player }> = ({ player }) => {
         <h3 style={{ fontSize: "1rem", margin: "0.3rem 0" }}>{player.name}</h3>
         <p style={{ margin: 0 }}>{player.position} (#{player.pos_rank})</p>
         <p style={{ margin: 0, fontSize: "0.75rem", color: "#555" }}>
-          Avg: {player.proj_points.toFixed(1)} pts • Bye: {player.bye}
+          Avg: {player.proj_points} pts | Bye: {player.bye}
         </p>
       </div>
 
@@ -97,58 +97,5 @@ const PlayerCard: React.FC<{ player: Player }> = ({ player }) => {
   );
 };
 
-  /* Mocked version
-  return (
-    <>
-      <div
-  style={{
-    backgroundColor: "#D5FFE5",
-    borderRadius: "12px",
-    padding: "0.8rem",
-    width: "100%",
-    maxWidth: "140px",
-    textAlign: "center",
-    boxShadow: "0 2px 5px rgba(0,0,0,0.1)",
-    fontFamily: "sans-serif",
-    cursor: "pointer",
-  }}
->
-  <img
-    src={player.imageUrl}
-    alt={player.name}
-    style={{
-      width: "80px",
-      height: "80px",
-      objectFit: "cover",
-      borderRadius: "50%",
-      marginBottom: "0.4rem",
-    }}
-  />
-  <div style={{ fontSize: "0.75rem", fontWeight: "bold", marginBottom: "0.3rem" }}>
-    {player.position} | {player.team}
-  </div>
-  <button
-    onClick={() => setModalOpen(true)}
-    style={{
-      fontSize: "0.7rem",
-      padding: "0.3rem 0.6rem",
-      backgroundColor: "#2E2E2E",
-      color: "#fff",
-      border: "none",
-      borderRadius: "4px",
-      cursor: "pointer",
-    }}
-  >
-    More Information
-  </button>
-</div>
 
-
-      {modalOpen && (
-        <PlayerInfoModal player={player} onClose={() => setModalOpen(false)} />
-      )}
-    </>
-  );
-};
-*/
 export default PlayerCard;

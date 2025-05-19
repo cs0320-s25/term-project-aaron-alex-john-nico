@@ -1,7 +1,6 @@
 import React, { useState } from "react";
-import PlayerCard from "./PlayerCard";
+import PlayerCard, { Player } from "./PlayerCard";
 import { useDraft } from "./DraftContext";
-import { Player } from "./PlayerCard";
 
 const PlayerBox: React.FC = () => {
   const {
@@ -39,19 +38,19 @@ const PlayerBox: React.FC = () => {
         }}
       >
         {Array.isArray(availablePlayers) &&
-  availablePlayers.map(player =>(
-          <div
-            key={index}
-            onClick={() => {
-              if (!isDraftComplete) {
-                setConfirmingPlayer(player);
-                setConfirmingIndex(index);
-              }
-            }}
-          >
-            <PlayerCard player={player} />
-          </div>
-        ))}
+          availablePlayers.map((player, index) => (
+            <div
+              key={index}
+              onClick={() => {
+                if (!isDraftComplete) {
+                  setConfirmingPlayer(player);
+                  setConfirmingIndex(index);
+                }
+              }}
+            >
+              <PlayerCard player={player} />
+            </div>
+          ))}
       </div>
 
       {confirmingPlayer && (
@@ -85,7 +84,14 @@ const PlayerBox: React.FC = () => {
               maxWidth: "90%",
             }}
           >
-            <h3>Draft {confirmingPlayer.name} ({confirmingPlayer.team})?</h3>
+            <h3>
+              Draft {confirmingPlayer.name} (
+              {confirmingPlayer.position} #{confirmingPlayer.pos_rank})?
+            </h3>
+            <p style={{ fontSize: "0.9rem", color: "#444" }}>
+              Avg: {confirmingPlayer.proj_points.toFixed(1)} pts • Bye:{" "}
+              {confirmingPlayer.bye}
+            </p>
             <div style={{ marginTop: "1rem" }}>
               <button
                 onClick={confirmDraft}

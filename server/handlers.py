@@ -111,8 +111,20 @@ def make_fetch_all_players_handler(available_players):
         '''
         Handler that fetches all the players in available_players
         '''
-        all_players = available_players.to_dict(orient="records")
+        all_players = []
+
+        for _, row in available_players.iterrows():
+            player = {
+                "name": row.get("player_display_name", "Unknown"),
+                "position": row.get("fantasy_position", "N/A"),
+                "pos_rank": row.get("position_rank", -1),
+                "proj_points": row.get("avg_projected_points", 0.0),
+                "bye": row.get("week", -1),
+            }
+            all_players.append(player)
+
         return jsonify(all_players), 200
+
     return fetch_all_players
 
 def make_fetch_user_players_handler(available_players, user_team):
