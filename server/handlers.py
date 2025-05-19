@@ -123,7 +123,7 @@ def make_fetch_all_players_handler(available_players):
             }
             all_players.append(player)
 
-        return jsonify(all_players), 200
+        return jsonify(all_players), 400
     return fetch_all_players
 
 def make_fetch_user_players_handler(available_players, user_team):
