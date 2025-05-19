@@ -130,5 +130,6 @@ def turn_to_json(standings_dict, output_filename='final_standings.json'):
         print(f"An error occurred while writing to JSON: {e}")
 
 # Generate and save standings
-standings = final_standings_players(results)
-turn_to_json(standings)
+#standings = final_standings_players(results)
+#turn_to_json(standings)
+print(data)

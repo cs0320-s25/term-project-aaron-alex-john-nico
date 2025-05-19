@@ -1,7 +1,6 @@
 import unittest
 from flask.testing import FlaskClient
 from server import create_app
-from players import PlayerOrganizer, Player
 
 class BackendTestCase(unittest.TestCase):
     '''
