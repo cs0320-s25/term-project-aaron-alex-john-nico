@@ -1,4 +1,5 @@
 import React from "react";
+import { useDraft } from "./DraftContext";
 
 interface TeamCardProps {
   teamNumber: number;
@@ -7,6 +8,9 @@ interface TeamCardProps {
 }
 
 const TeamCard: React.FC<TeamCardProps> = ({ teamNumber, isUserTeam, isCurrentTurn }) => {
+  const { setViewingRosterIndex, viewingRosterIndex } = useDraft(); // ⬅️ Add this
+  const index = teamNumber - 1; // teams are 0-indexed internally
+  const isViewingThisRoster = viewingRosterIndex === index;
   const bgColor = isCurrentTurn ? "#5EF4C7" : "#F7A24F";
   const scaleStyle = isCurrentTurn ? "scale(1.1)" : "scale(1)";
 
@@ -28,6 +32,9 @@ const TeamCard: React.FC<TeamCardProps> = ({ teamNumber, isUserTeam, isCurrentTu
         {isUserTeam ? "You" : `Team ${teamNumber}`}
       </div>
       <button
+        onClick={() =>
+          setViewingRosterIndex(isViewingThisRoster ? null : index)
+        }
         style={{
           marginTop: "0.5rem",
           padding: "0.4rem 0.8rem",
@@ -38,10 +45,10 @@ const TeamCard: React.FC<TeamCardProps> = ({ teamNumber, isUserTeam, isCurrentTu
           cursor: "pointer",
         }}
       >
-        {isUserTeam ? "Hide Roster" : "View Roster"}
+        {isViewingThisRoster ? "Hide Roster" : "View Roster"} 
       </button>
     </div>
-  );
+  ); //changed IsViewingThisRoster ftom isUserTeam
 };
 
 export default TeamCard;

@@ -57,8 +57,9 @@ const RosterSlot: React.FC<RosterSlotProps> = ({ position, labelColor, player, o
 };
 
 const RosterBox: React.FC = () => {
-  const { draftPosition, teamRosters } = useDraft();
-  const roster = teamRosters[draftPosition] || [];
+  const { draftPosition, teamRosters, viewingRosterIndex } = useDraft();
+  const index = viewingRosterIndex ?? draftPosition;
+  const roster = teamRosters[index] || [];
   const [selectedPlayer, setSelectedPlayer] = useState<Player | null>(null);
 
   const slotCounts: Record<string, number> = {

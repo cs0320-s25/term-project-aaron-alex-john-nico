@@ -13,6 +13,8 @@ interface DraftContextType {
   currentTeamIndex: number;
   recommendedPlayer: Player | null;
   setRecommendedPlayer: (p: Player | null) => void;
+  viewingRosterIndex: number | null;
+  setViewingRosterIndex: (n: number | null) => void;
 }
 
 const DraftContext = createContext<DraftContextType | undefined>(undefined);
@@ -26,6 +28,10 @@ export const DraftProvider: React.FC<{ children: React.ReactNode }> = ({ childre
   );
   const [pickNumber, setPickNumber] = useState(0);
   const [recommendedPlayer, setRecommendedPlayer] = useState<Player | null>(null);
+
+  const [viewingRosterIndex, setViewingRosterIndex] = useState<number | null>(
+    null
+  );
 
   const totalPicks = numTeams * 14;
   const isDraftComplete = pickNumber >= totalPicks;
@@ -143,6 +149,8 @@ export const DraftProvider: React.FC<{ children: React.ReactNode }> = ({ childre
         currentTeamIndex,
         recommendedPlayer,
         setRecommendedPlayer,
+        viewingRosterIndex, // NEW
+        setViewingRosterIndex, // NEW
       }}
     >
       {children}
