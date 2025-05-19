@@ -131,5 +131,5 @@ def turn_to_json(standings_dict, output_filename='final_standings.json'):
 
 # Generate and save standings
 standings = final_standings_players(results)
-turn_to_json(standings)
+#turn_to_json(standings)
 

@@ -1,6 +1,7 @@
 import json
 from collections import defaultdict, Counter
 from espn_api.football import League  
+import playerPicker
 
 # Define roster requirements
 ROSTER_LIMIT = 16
@@ -166,9 +167,7 @@ def get_roster(excluded_players=None):
     if excluded_players is None:
         excluded_players = []  # Default to an empty list if no exclusions are given
 
-    with open('final_standings.json', 'r') as f:
-        standings = json.load(f)
-
+    standings = playerPicker.standings
     standings = add_dst_rankings(standings)
     player_scores, roster = calculate_player_scores(standings, excluded_players)
     return roster
