@@ -1,11 +1,19 @@
-export interface Player {
+export interface PlayerOld {
+  name: string;
+  position: string;
+  team: string;
+  imageUrl: string;
+}
+
+
+export interface PlayerOld {
     name: string;
     position: string;
     team: string;
     imageUrl: string;
   }
   
-  export const mockPlayers: Player[] = [
+  export const mockPlayers: PlayerOld[] = [
     {
       name: "Joe Mixon",
       position: "RB",
