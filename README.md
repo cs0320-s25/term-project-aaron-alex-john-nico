@@ -22,7 +22,6 @@ The algorithm includes safeguards to guarantee all required positions (such as K
 
 To promote modularity and reusability, each endpoint in our Flask application is defined using a handler factory, a higher-order function like make_handler that returns the actual route handler. This pattern enables easy injection of shared context, such as application state or configuration, without relying on global variables. This design choice keeps the codebase clean, consistent, and easier to maintain as the application scales.
 
-
 ## Bugs/Errors
 N/A
 
@@ -45,7 +44,7 @@ N/A
 
 
 ## How To
-
+Our aim was to make the UI as easy to navigate as possible. From the cofigure tab at the top, you can add how many people are in your league as well as your draft position. The user then adds the player drafted to the corresponding person's roster. The application will automatically progress the draft to the next user after a player is picked. To add a player simply click on their player card. The recommended player is highlighted so that the user knows who to pick.
 
 ## Collaboration
 “Welcome to Flask¶.” Welcome to Flask - Flask Documentation (3.1.x), https://flask.palletsprojects.com/en/stable/. Accessed 18 May 2025. 
