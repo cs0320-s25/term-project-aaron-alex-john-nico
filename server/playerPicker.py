@@ -145,5 +145,3 @@ full_results['season'] = 2024
 
 # Use this for final standings
 standings = final_standings_players(full_results)
-#turn_to_json(standings)
-print("CSV Headers:", data.columns.tolist())

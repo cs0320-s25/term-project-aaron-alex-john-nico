@@ -186,13 +186,3 @@ def get_roster(user_team=[], excluded_players=None):
     player_scores, roster = calculate_player_scores(standings, user_team, excluded_players)
     return roster
 
-if __name__ == "__main__":
-    if False:
-        with open('final_standings.json', 'r') as f:
-            standings = json.load(f)
-
-        standings = add_dst_rankings(standings)
-        player_scores, roster = calculate_player_scores(standings, [])
-        print(roster)
-        save_roster_to_json(roster)
-
