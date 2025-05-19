@@ -11,6 +11,8 @@ interface DraftContextType {
   isDraftComplete: boolean;
   makePick: (player: Player, index: number) => void;
   currentTeamIndex: number;
+  recommendedPlayer: Player | null;
+  setRecommendedPlayer: (p: Player | null) => void;
 }
 
 const DraftContext = createContext<DraftContextType | undefined>(undefined);
@@ -23,11 +25,11 @@ export const DraftProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     Array.from({ length: 4 }, () => [])
   );
   const [pickNumber, setPickNumber] = useState(0);
+  const [recommendedPlayer, setRecommendedPlayer] = useState<Player | null>(null);
 
   const totalPicks = numTeams * 14;
   const isDraftComplete = pickNumber >= totalPicks;
 
-  // Snake draft logic
   const currentTeamIndex = (() => {
     const round = Math.floor(pickNumber / numTeams);
     const indexInRound = pickNumber % numTeams;
@@ -38,44 +40,56 @@ export const DraftProvider: React.FC<{ children: React.ReactNode }> = ({ childre
 
   const makePick = async (player: Player, index: number) => {
     if (isDraftComplete) return;
-  
+
+    const isUserTeam = currentTeamIndex === draftPosition;
+
     try {
       const res = await fetch(
-        `http://127.0.0.1:3232/add-player?name=${encodeURIComponent(
-          player.name
-        )}&user=true`,
+        `http://127.0.0.1:3232/add-player?name=${encodeURIComponent(player.name)}&user=${isUserTeam}`,
         {
           method: "GET",
           credentials: "include",
         }
       );
-  
+
       const result = await res.json();
-  
+
       if (!res.ok) {
         console.error("Backend rejected player:", result.message);
         return;
       }
-  
+
       console.log("Player added on backend:", player.name);
-  
-      // Locally update roster (this must still happen)
+
+      // Update local roster
       const newRosters = [...teamRosters];
       newRosters[currentTeamIndex] = [...newRosters[currentTeamIndex], player];
       setTeamRosters(newRosters);
-  
+
       // Remove player from available pool
       const newAvailable = [...availablePlayers];
       newAvailable.splice(index, 1);
       setAvailablePlayers(newAvailable);
-  
+
       setPickNumber((prev) => prev + 1);
+
+      // Fetch new recommendation
+      try {
+        const recRes = await fetch("http://127.0.0.1:3232/best-player", {
+          credentials: "include",
+        });
+        const recommendation = await recRes.json();
+        console.log("Recommended player from backend:", recommendation);
+        setRecommendedPlayer(recommendation);
+      } catch (err) {
+        console.error("Failed to fetch recommendation:", err);
+        setRecommendedPlayer(null);
+      }
+
     } catch (err) {
       console.error("Request failed:", err);
     }
   };
-  
-  
 
   useEffect(() => {
     setTeamRosters(Array.from({ length: numTeams }, () => []));
@@ -94,7 +108,7 @@ export const DraftProvider: React.FC<{ children: React.ReactNode }> = ({ childre
         console.error("Failed to fetch players:", err);
       }
     };
-  
+
     fetchPlayers();
   }, []);
 
@@ -110,6 +124,8 @@ export const DraftProvider: React.FC<{ children: React.ReactNode }> = ({ childre
         isDraftComplete,
         makePick,
         currentTeamIndex,
+        recommendedPlayer,
+        setRecommendedPlayer,
       }}
     >
       {children}
