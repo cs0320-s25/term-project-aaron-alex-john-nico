@@ -1,0 +1,107 @@
+[
+    {
+        "name": "Lamar Jackson",
+        "position": "QB",
+        "projected_points": 392.2171999999999,
+        "team": "Unknown",
+        "adjusted_score": 1000
+    },
+    {
+        "name": "Ja'Marr Chase",
+        "position": "WR",
+        "projected_points": 358.6527999999999,
+        "adjusted_score": 388.6527999999999,
+        "team": "Unknown"
+    },
+    {
+        "name": "Jahmyr Gibbs",
+        "position": "RB",
+        "projected_points": 311.4680000000003,
+        "adjusted_score": 341.4680000000003,
+        "team": "Unknown"
+    },
+    {
+        "name": "Saquon Barkley",
+        "position": "RB",
+        "projected_points": 310.0419999999997,
+        "adjusted_score": 340.0419999999997,
+        "team": "Unknown"
+    },
+    {
+        "name": "Baker Mayfield",
+        "position": "QB",
+        "projected_points": 355.8335999999999,
+        "adjusted_score": 335.8335999999999,
+        "team": "Unknown"
+    },
+    {
+        "name": "Justin Jefferson",
+        "position": "WR",
+        "projected_points": 305.31319999999977,
+        "adjusted_score": 335.31319999999977,
+        "team": "Unknown"
+    },
+    {
+        "name": "Joe Burrow",
+        "position": "QB",
+        "projected_points": 336.4914,
+        "adjusted_score": 316.4914,
+        "team": "Unknown"
+    },
+    {
+        "name": "Brock Bowers",
+        "position": "TE",
+        "projected_points": 259.51940000000025,
+        "adjusted_score": 289.51940000000025,
+        "team": "Unknown"
+    },
+    {
+        "name": "Amon-Ra St. Brown",
+        "position": "WR",
+        "projected_points": 301.3546000000001,
+        "adjusted_score": 281.3546000000001,
+        "team": "Unknown"
+    },
+    {
+        "name": "Devon Achane",
+        "position": "RB",
+        "projected_points": 289.29500000000036,
+        "adjusted_score": 269.29500000000036,
+        "team": "Unknown"
+    },
+    {
+        "name": "Bijan Robinson",
+        "position": "RB",
+        "projected_points": 288.3570000000002,
+        "adjusted_score": 268.3570000000002,
+        "team": "Unknown"
+    },
+    {
+        "name": "Drake London",
+        "position": "WR",
+        "projected_points": 279.6565999999997,
+        "adjusted_score": 259.6565999999997,
+        "team": "Unknown"
+    },
+    {
+        "name": "Trey McBride",
+        "position": "TE",
+        "projected_points": 246.5117999999997,
+        "adjusted_score": 226.5117999999997,
+        "team": "Unknown"
+    },
+    {
+        "name": "Den DST",
+        "position": "DST",
+        "projected_points": 33,
+        "adjusted_score": 83,
+        "team": "Den"
+    },
+    {
+        "name": "Hou DST",
+        "position": "DST",
+        "projected_points": 33,
+        "adjusted_score": 33,
+        "team": "Hou"
+    }
+]
