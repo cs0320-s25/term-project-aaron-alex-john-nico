@@ -12,7 +12,7 @@ POSITION_REQUIREMENTS = {
     'TE': {'min': 1, 'max': 2},
     'K': {'min': 1, 'max': 2},
     'DST': {'min': 1, 'max': 2},
-    'FLEX': {'min': 1, 'max': 1},  # FLEX is a required position
+    'FLEX': {'min': 1, 'max': 1}, 
 }
 
 FLEX_ELIGIBLE = {'RB', 'WR', 'TE'}
@@ -34,7 +34,7 @@ def calculate_player_scores(standings, excluded_players):
     roster = []
     team_counts = defaultdict(int)
     position_counts = defaultdict(int)
-    selected_names = set()  # Tracks names already added
+    selected_names = set()  
 
     # Flatten the standings dictionary into a list of players.
     all_players = []
@@ -175,14 +175,12 @@ def get_roster(excluded_players=None):
     return roster
 
 if __name__ == "__main__":
-    with open('final_standings.json', 'r') as f:
-        standings = json.load(f)
+    if False:
+        with open('final_standings.json', 'r') as f:
+            standings = json.load(f)
 
-    standings = add_dst_rankings(standings)
-    player_scores, roster = calculate_player_scores(standings, [])
-    print(roster)
-    save_roster_to_json(roster)
+        standings = add_dst_rankings(standings)
+        player_scores, roster = calculate_player_scores(standings, [])
+        print(roster)
+        save_roster_to_json(roster)
 
-# Example usage
-excluded_players_list = ["Josh Allen", "Davante Adams"]  # Example list of players to exclude
-print(get_roster(excluded_players_list))

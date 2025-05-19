@@ -2,6 +2,7 @@ from flask import Flask
 from flask_cors import CORS
 from players import Player, PlayerOrganizer
 import data2024 as data2024
+import json
 from handlers import (
     make_add_player_handler,
     make_get_player_handler,
@@ -11,6 +12,28 @@ from handlers import (
     make_fetch_opp_players_handler,
     best_player_handler
 )
+
+avalable_players = []
+our_team = []
+op_team = []
+
+# Initialize available_players as an empty list
+available_players = []
+
+# Load player names from final_standings.json
+def load_available_players():
+    try:
+        with open('final_standings.json', 'r') as f:
+            standings = json.load(f)
+
+        # Extract player names from all positions
+        for position, players in standings.items():
+            for player in players:
+                available_players.append(player[0])  # Extract player name
+    except Exception as e:
+        print(f"Error loading available players: {e}")
+
+load_available_players()
 
 bye_weeks = {
     "ARI": 11,
