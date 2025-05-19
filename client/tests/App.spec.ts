@@ -3,7 +3,7 @@ import { setupClerkTestingToken, clerk } from "@clerk/testing/playwright";
 
 
 test('Log in works Well', async ({ page }) => {
-    await page.goto('http://localhost:5174/');
+    await page.goto('http://localhost:5173/');
     await page.getByRole('button', { name: 'Sign In' }).click();
     await page.getByRole('textbox', { name: 'Email address or username' }).click();
     await page.getByRole('textbox', { name: 'Email address or username' }).fill('notreal');

@@ -7,15 +7,20 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "test": "npx playwright test"         
   },
   "dependencies": {
     "@clerk/clerk-react": "^5.30.4",
+    "dotenv": "^16.4.7",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react-dom": "^19.0.0",
+    "playwright": "^1.52.0"
   },
   "devDependencies": {
+    "@clerk/testing": "^1.4.28",
     "@eslint/js": "^9.22.0",
+    "@playwright/test": "^1.51.1",
     "@types/react": "^19.0.10",
     "@types/react-dom": "^19.0.4",
     "@vitejs/plugin-react": "^4.3.4",

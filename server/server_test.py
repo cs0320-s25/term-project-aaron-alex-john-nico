@@ -184,10 +184,6 @@ class BackendTestCase(unittest.TestCase):
         response = self.client.get("/best-player")
         best_player = self.client.get("/best-player").get_json()
         true_best_player = "{'adjusted_score': 442.2171999999999, 'name': 'Lamar Jackson', 'position': 'QB', 'projected_points': 392.2171999999999, 'team': 'Unknown'}"
-        print("hello world")
-        print(str(best_player))
-        print(true_best_player)
-        print(response.status_code)
         self.assertEqual(str(best_player), true_best_player)
         self.assertEqual(response.status_code, 200)
 
