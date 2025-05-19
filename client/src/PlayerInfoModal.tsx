@@ -34,22 +34,16 @@ const PlayerInfoModal: React.FC<ModalProps> = ({ player, onClose }) => {
           fontFamily: "sans-serif",
         }}
       >
-        <img
-          src={player.imageUrl}
-          alt={player.name}
-          style={{
-            width: "100px",
-            height: "100px",
-            objectFit: "cover",
-            borderRadius: "50%",
-            marginBottom: "1rem",
-          }}
-        />
-        <h2>{player.name}</h2>
+        <h2 style={{ marginBottom: "0.5rem" }}>{player.name}</h2>
         <p style={{ fontWeight: "bold", marginBottom: "0.5rem" }}>
-          {player.position} | {player.team}
+          {player.position} (#{player.pos_rank})
         </p>
-        <p>This player has not been drafted yet.</p>
+        <p style={{ fontSize: "0.95rem", color: "#333" }}>
+          Avg Projected: {player.proj_points.toFixed(1)} pts
+        </p>
+        <p style={{ fontSize: "0.95rem", color: "#333" }}>
+          Bye Week: {player.bye === -1 ? "N/A" : player.bye}
+        </p>
         <button
           onClick={onClose}
           style={{

@@ -90,6 +90,7 @@ for position in results['position'].unique():
     print(f"Position: {position}")
     print(top_scorers[['player_display_name', 'predicted_points']])
 
+
 # Plot: Actual vs. Predicted
 plt.figure(figsize=(10, 6))
 plt.scatter(y_test, y_pred, alpha=0.7, color='blue')

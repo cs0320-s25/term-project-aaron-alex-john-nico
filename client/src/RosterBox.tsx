@@ -33,13 +33,25 @@ const RosterSlot: React.FC<RosterSlotProps> = ({ position, labelColor, player, o
           padding: "0.3rem 0.6rem",
           borderRadius: "6px",
           marginRight: "1rem",
-          minWidth: "40px",
+          minWidth: "50px",
           textAlign: "center",
+          flexShrink: 0,
         }}
       >
         {position}
       </div>
-      <div>{player ? `${player.name} (${player.team})` : "Empty"}</div>
+      <div
+        style={{
+          flex: 1,
+          whiteSpace: "nowrap",
+          overflow: "hidden",
+          textOverflow: "ellipsis",
+        }}
+      >
+        {player
+          ? `${player.name} (Rank: ${player.pos_rank}, Pts: ${player.proj_points.toFixed(1)}, Bye: ${player.bye})`
+          : "Empty"}
+      </div>
     </div>
   );
 };

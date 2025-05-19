@@ -15,134 +15,56 @@ const PlayerCard: React.FC<{ player: Player }> = ({ player }) => {
   return (
     <>
       <div
-        onClick={() => setModalOpen(true)}
         style={{
           backgroundColor: "#D5FFE5",
-          borderRadius: "12px",
-          padding: "0.8rem",
-          width: "100%",
-          maxWidth: "140px",
+          borderRadius: "1.5vh",
+          padding: "1vh",
+          width: "10vw",
+          height: "10vh",
           textAlign: "center",
-          boxShadow: "0 2px 5px rgba(0,0,0,0.1)",
+          boxShadow: "0 0.3vh 1vh rgba(0,0,0,0.1)",
           fontFamily: "sans-serif",
-          cursor: "pointer",
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "space-between",
+          cursor: "default",
         }}
       >
-        <h3 style={{ fontSize: "1rem", margin: "0.3rem 0" }}>{player.name}</h3>
-        <p style={{ margin: 0 }}>{player.position} (#{player.pos_rank})</p>
-        <p style={{ margin: 0, fontSize: "0.75rem", color: "#555" }}>
-          Avg: {player.proj_points.toFixed(1)} pts • Bye: {player.bye}
-        </p>
-      </div>
-
-      {modalOpen && (
-        <div
-          onClick={() => setModalOpen(false)}
-          style={{
-            position: "fixed",
-            top: 0,
-            left: 0,
-            width: "100vw",
-            height: "100vh",
-            backgroundColor: "rgba(0, 0, 0, 0.6)",
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            zIndex: 1000,
-          }}
-        >
-          <div
-            onClick={(e) => e.stopPropagation()}
+        <div>
+          <h3
             style={{
-              backgroundColor: "#fff",
-              padding: "2rem",
-              borderRadius: "10px",
-              fontFamily: "sans-serif",
-              maxWidth: "90%",
-              textAlign: "center",
-              boxShadow: "0 4px 12px rgba(0,0,0,0.25)",
+              fontSize: "1.8vh",
+              margin: "0.5vh 0",
+              whiteSpace: "nowrap",
+              overflow: "hidden",
+              textOverflow: "ellipsis",
             }}
           >
-            <h2>{player.name}</h2>
-            <p>
-              <strong>Position:</strong> {player.position}
-            </p>
-            <p>
-              <strong>Pos Rank:</strong> #{player.pos_rank}
-            </p>
-            <p>
-              <strong>Projected Avg:</strong> {player.proj_points.toFixed(1)} pts
-            </p>
-            <p>
-              <strong>Bye Week:</strong> {player.bye}
-            </p>
-            <button
-              onClick={() => setModalOpen(false)}
-              style={{
-                marginTop: "1rem",
-                padding: "0.5rem 1rem",
-                backgroundColor: "#333",
-                color: "white",
-                border: "none",
-                borderRadius: "6px",
-                cursor: "pointer",
-              }}
-            >
-              Close
-            </button>
-          </div>
+            {player.name}
+          </h3>
+          <p style={{ margin: 0, fontSize: "1.4vh" }}>
+            {player.position}
+          </p>
+          <p style={{ margin: 0, fontSize: "1.2vh", color: "#555" }}>
+            Proj: {player.proj_points.toFixed(2)} pts
+          </p>
         </div>
-      )}
-    </>
-  );
-};
-
-  /* Mocked version
-  return (
-    <>
-      <div
-  style={{
-    backgroundColor: "#D5FFE5",
-    borderRadius: "12px",
-    padding: "0.8rem",
-    width: "100%",
-    maxWidth: "140px",
-    textAlign: "center",
-    boxShadow: "0 2px 5px rgba(0,0,0,0.1)",
-    fontFamily: "sans-serif",
-    cursor: "pointer",
-  }}
->
-  <img
-    src={player.imageUrl}
-    alt={player.name}
-    style={{
-      width: "80px",
-      height: "80px",
-      objectFit: "cover",
-      borderRadius: "50%",
-      marginBottom: "0.4rem",
-    }}
-  />
-  <div style={{ fontSize: "0.75rem", fontWeight: "bold", marginBottom: "0.3rem" }}>
-    {player.position} | {player.team}
-  </div>
-  <button
-    onClick={() => setModalOpen(true)}
-    style={{
-      fontSize: "0.7rem",
-      padding: "0.3rem 0.6rem",
-      backgroundColor: "#2E2E2E",
-      color: "#fff",
-      border: "none",
-      borderRadius: "4px",
-      cursor: "pointer",
-    }}
-  >
-    More Information
-  </button>
-</div>
-
+        <button
+          onClick={() => setModalOpen(true)}
+          style={{
+            marginTop: "1vh",
+            padding: "0.5vh 1vh",
+            backgroundColor: "#15192D",
+            color: "white",
+            border: "none",
+            borderRadius: "1vh",
+            fontSize: "1.3vh",
+            cursor: "pointer",
+          }}
+        >
+          More Info
+        </button>
+      </div>
 
       {modalOpen && (
         <PlayerInfoModal player={player} onClose={() => setModalOpen(false)} />
@@ -150,5 +72,5 @@ const PlayerCard: React.FC<{ player: Player }> = ({ player }) => {
     </>
   );
 };
-*/
+
 export default PlayerCard;

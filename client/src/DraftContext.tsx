@@ -36,19 +36,46 @@ export const DraftProvider: React.FC<{ children: React.ReactNode }> = ({ childre
       : numTeams - 1 - indexInRound;
   })();
 
-  const makePick = (player: Player, index: number) => {
+  const makePick = async (player: Player, index: number) => {
     if (isDraftComplete) return;
-
-    const newAvailable = [...availablePlayers];
-    newAvailable.splice(index, 1);
-    setAvailablePlayers(newAvailable);
-
-    const newRosters = [...teamRosters];
-    newRosters[currentTeamIndex] = [...newRosters[currentTeamIndex], player];
-    setTeamRosters(newRosters);
-
-    setPickNumber(pickNumber + 1);
+  
+    try {
+      const res = await fetch(
+        `http://127.0.0.1:3232/add-player?name=${encodeURIComponent(
+          player.name
+        )}&user=true`,
+        {
+          method: "GET",
+          credentials: "include",
+        }
+      );
+  
+      const result = await res.json();
+  
+      if (!res.ok) {
+        console.error("Backend rejected player:", result.message);
+        return;
+      }
+  
+      console.log("Player added on backend:", player.name);
+  
+      // Locally update roster (this must still happen)
+      const newRosters = [...teamRosters];
+      newRosters[currentTeamIndex] = [...newRosters[currentTeamIndex], player];
+      setTeamRosters(newRosters);
+  
+      // Remove player from available pool
+      const newAvailable = [...availablePlayers];
+      newAvailable.splice(index, 1);
+      setAvailablePlayers(newAvailable);
+  
+      setPickNumber((prev) => prev + 1);
+    } catch (err) {
+      console.error("Request failed:", err);
+    }
   };
+  
+  
 
   useEffect(() => {
     setTeamRosters(Array.from({ length: numTeams }, () => []));
