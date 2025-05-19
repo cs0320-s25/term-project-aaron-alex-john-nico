@@ -43,7 +43,7 @@ const PlayerCard: React.FC<{ player: Player }> = ({ player }) => {
             {player.name}
           </h3>
           <p style={{ margin: 0, fontSize: "1.4vh" }}>
-            {player.position} 
+            {player.position}
           </p>
           <p style={{ margin: 0, fontSize: "1.2vh", color: "#555" }}>
             Proj: {player.proj_points.toFixed(2)} pts

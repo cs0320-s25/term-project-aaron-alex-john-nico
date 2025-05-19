@@ -45,7 +45,7 @@ export const DraftProvider: React.FC<{ children: React.ReactNode }> = ({ childre
           player.name
         )}&user=true`,
         {
-          method: "POST",
+          method: "GET",
           credentials: "include",
         }
       );

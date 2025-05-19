@@ -6,18 +6,21 @@ const PlayerBox: React.FC = () => {
   const {
     availablePlayers,
     makePick,
-    draftPosition,
     isDraftComplete,
   } = useDraft();
 
   const [confirmingPlayer, setConfirmingPlayer] = useState<Player | null>(null);
-  const [confirmingIndex, setConfirmingIndex] = useState<number | null>(null);
+
+  const sortedPlayers = [...availablePlayers].sort((a, b) => b.proj_points - a.proj_points);
 
   const confirmDraft = () => {
-    if (confirmingIndex === null || !confirmingPlayer) return;
-    makePick(confirmingPlayer, confirmingIndex);
+    if (!confirmingPlayer) return;
+
+    const trueIndex = availablePlayers.findIndex(p => p.name === confirmingPlayer.name);
+    if (trueIndex === -1) return;
+
+    makePick(confirmingPlayer, trueIndex);
     setConfirmingPlayer(null);
-    setConfirmingIndex(null);
   };
 
   return (
@@ -37,23 +40,18 @@ const PlayerBox: React.FC = () => {
           alignContent: "start",
         }}
       >
-        {Array.isArray(availablePlayers) &&
-        [...availablePlayers]
-          .sort((a, b) => b.proj_points - a.proj_points)
-          .map((player, index) => (
-            <div
-              key={index}
-              onClick={() => {
-                if (!isDraftComplete) {
-                  setConfirmingPlayer(player);
-                  setConfirmingIndex(index);
-                }
-              }}
-            >
-              <PlayerCard player={player} />
-            </div>
-      ))}
-
+        {sortedPlayers.map((player) => (
+          <div
+            key={player.name}
+            onClick={() => {
+              if (!isDraftComplete) {
+                setConfirmingPlayer(player);
+              }
+            }}
+          >
+            <PlayerCard player={player} />
+          </div>
+        ))}
       </div>
 
       {confirmingPlayer && (
@@ -70,10 +68,7 @@ const PlayerBox: React.FC = () => {
             alignItems: "center",
             zIndex: 1000,
           }}
-          onClick={() => {
-            setConfirmingPlayer(null);
-            setConfirmingIndex(null);
-          }}
+          onClick={() => setConfirmingPlayer(null)}
         >
           <div
             onClick={(e) => e.stopPropagation()}
@@ -92,8 +87,7 @@ const PlayerBox: React.FC = () => {
               {confirmingPlayer.position} #{confirmingPlayer.pos_rank})?
             </h3>
             <p style={{ fontSize: "0.9rem", color: "#444" }}>
-              Avg: {confirmingPlayer.proj_points.toFixed(1)} pts • Bye:{" "}
-              {confirmingPlayer.bye}
+              Avg: {confirmingPlayer.proj_points.toFixed(1)} pts • Bye: {confirmingPlayer.bye}
             </p>
             <div style={{ marginTop: "1rem" }}>
               <button
@@ -111,10 +105,7 @@ const PlayerBox: React.FC = () => {
                 Confirm
               </button>
               <button
-                onClick={() => {
-                  setConfirmingPlayer(null);
-                  setConfirmingIndex(null);
-                }}
+                onClick={() => setConfirmingPlayer(null)}
                 style={{
                   backgroundColor: "#ccc",
                   padding: "0.5rem 1rem",
