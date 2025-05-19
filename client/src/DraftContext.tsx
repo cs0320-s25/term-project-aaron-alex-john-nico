@@ -4,11 +4,14 @@ import { mockPlayers } from "./data/mockplayers";
 
 interface DraftContextType {
   draftPosition: number;
+  setDraftPosition: (n: number) => void;
   availablePlayers: Player[];
   teamRosters: Player[][];
   numTeams: number;
+  setNumTeams: (n: number) => void;
   isDraftComplete: boolean;
   makePick: (player: Player, index: number) => void;
+  currentTeamIndex: number;
 }
 
 const DraftContext = createContext<DraftContextType | undefined>(undefined);
@@ -21,50 +24,44 @@ export const DraftProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     Array.from({ length: 4 }, () => [])
   );
   const [pickNumber, setPickNumber] = useState(0);
+  const [currentTeamIndex, setCurrentTeamIndex] = useState(0);
 
-  const totalPicks = numTeams * 14; // assume 14 roster slots per team
+  const totalPicks = numTeams * 14;
   const isDraftComplete = pickNumber >= totalPicks;
 
   const makePick = (player: Player, index: number) => {
     if (isDraftComplete) return;
 
-    // Remove from pool
     const newAvailable = [...availablePlayers];
     newAvailable.splice(index, 1);
     setAvailablePlayers(newAvailable);
 
-    // Add to current team
     const newRosters = [...teamRosters];
-    newRosters[draftPosition] = [...newRosters[draftPosition], player];
+    newRosters[currentTeamIndex] = [...newRosters[currentTeamIndex], player];
     setTeamRosters(newRosters);
 
-    // Advance pick
-    const nextPick = pickNumber + 1;
-    setPickNumber(nextPick);
-
-    // Snake logic: even round = left to right, odd round = right to left
-    const round = Math.floor(nextPick / numTeams);
-    const posInRound = nextPick % numTeams;
-    const forward = round % 2 === 0;
-    const nextDraftPos = forward ? posInRound : numTeams - 1 - posInRound;
-    setDraftPosition(nextDraftPos);
+    setPickNumber(pickNumber + 1);
+    setCurrentTeamIndex((currentTeamIndex + 1) % numTeams);
   };
 
   useEffect(() => {
     setTeamRosters(Array.from({ length: numTeams }, () => []));
     setPickNumber(0);
-    setDraftPosition(0);
+    setCurrentTeamIndex(0);
   }, [numTeams]);
 
   return (
     <DraftContext.Provider
       value={{
         draftPosition,
+        setDraftPosition,
         availablePlayers,
         teamRosters,
         numTeams,
+        setNumTeams,
         isDraftComplete,
         makePick,
+        currentTeamIndex,
       }}
     >
       {children}
