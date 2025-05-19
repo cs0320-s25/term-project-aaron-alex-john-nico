@@ -13,12 +13,29 @@ class BackendTestCase(unittest.TestCase):
     def test_fetch_all_players(self):
         '''
         This tests the basic functionality of fetching all players.
+        It ensures that the data is a non-empty list of dictionaries,
+        and that each dictionary contains expected player fields with valid types.
         '''
         response = self.client.get("/fetch-all-players")
         self.assertEqual(response.status_code, 200)
+
         data = response.get_json()
         self.assertIsInstance(data, list)
-        self.assertTrue(any("player_display_name" in p for p in data))
+        self.assertGreater(len(data), 0, "The players list should not be empty")
+
+        required_keys = {
+            "player_display_name": str,
+            "player_id": str,
+            "position": str,
+            "season": int,
+            "fantasy_points_ppr": (int, float)
+        }
+
+        for player in data:
+            self.assertIsInstance(player, dict)
+            for key, expected_type in required_keys.items():
+                self.assertIn(key, player, f"Missing key: {key}")
+                self.assertIsInstance(player[key], expected_type, f"{key} should be of type {expected_type}")
 
     def test_get_player_valid(self):
         '''
