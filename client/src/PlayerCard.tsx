@@ -49,6 +49,7 @@ const PlayerCard: React.FC<{ player: Player; isRecommended?: boolean }> = ({ pla
           </p>
         </div>
         <button
+          aria-label={`More information about ${player.name}`}
           onClick={() => setModalOpen(true)}
           style={{
             marginTop: "1vh",

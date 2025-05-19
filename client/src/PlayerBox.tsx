@@ -7,7 +7,7 @@ const PlayerBox: React.FC = () => {
     availablePlayers,
     makePick,
     isDraftComplete,
-    recommendedPlayer, //added
+    recommendedPlayer,
   } = useDraft();
 
   const [confirmingPlayer, setConfirmingPlayer] = useState<Player | null>(null);
@@ -78,6 +78,9 @@ const PlayerBox: React.FC = () => {
           onClick={() => setConfirmingPlayer(null)}
         >
           <div
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="confirmDraftTitle"
             onClick={(e) => e.stopPropagation()}
             style={{
               backgroundColor: "#fff",

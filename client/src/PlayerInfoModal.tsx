@@ -24,6 +24,9 @@ const PlayerInfoModal: React.FC<ModalProps> = ({ player, onClose }) => {
       }}
     >
       <div
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="playerModalTitle"
         onClick={(e) => e.stopPropagation()}
         style={{
           backgroundColor: "white",
