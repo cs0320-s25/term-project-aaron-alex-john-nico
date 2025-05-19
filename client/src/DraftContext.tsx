@@ -58,14 +58,16 @@ export const DraftProvider: React.FC<{ children: React.ReactNode }> = ({ childre
   useEffect(() => {
     const fetchPlayers = async () => {
       try {
-        const res = await fetch("http://localhost:5000/api/players");
+        const res = await fetch("http://127.0.0.1:3232/fetch-all-players", {
+          credentials: "include",
+        });
         const data = await res.json();
         setAvailablePlayers(data);
       } catch (err) {
         console.error("Failed to fetch players:", err);
       }
     };
-
+  
     fetchPlayers();
   }, []);
 

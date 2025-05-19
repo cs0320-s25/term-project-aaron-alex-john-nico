@@ -38,7 +38,8 @@ const PlayerBox: React.FC = () => {
           alignContent: "start",
         }}
       >
-        {availablePlayers.map((player, index) => (
+        {Array.isArray(availablePlayers) &&
+  availablePlayers.map(player =>(
           <div
             key={index}
             onClick={() => {
