@@ -38,7 +38,9 @@ const PlayerBox: React.FC = () => {
         }}
       >
         {Array.isArray(availablePlayers) &&
-          availablePlayers.map((player, index) => (
+        [...availablePlayers]
+          .sort((a, b) => b.proj_points - a.proj_points)
+          .map((player, index) => (
             <div
               key={index}
               onClick={() => {
@@ -50,7 +52,8 @@ const PlayerBox: React.FC = () => {
             >
               <PlayerCard player={player} />
             </div>
-          ))}
+      ))}
+
       </div>
 
       {confirmingPlayer && (
