@@ -28,7 +28,7 @@ def requirements_met(roster):
             return False
     return True
 
-def calculate_player_scores(standings, excluded_players):
+def calculate_player_scores(standings, user_team, excluded_players):
     """Calculates adjusted scores for each player and builds the roster. Excludes players from the provided list."""
     player_scores = {}
     roster = []
@@ -43,12 +43,23 @@ def calculate_player_scores(standings, excluded_players):
             name, projected_points, team = player
             if name in excluded_players:
                 continue  # Skip excluded players
-            all_players.append({
-                'name': name,
-                'position': position,
-                'projected_points': projected_points,
-                'team': team
-            })
+            elif name in user_team:
+                roster.append({
+                    'name': name,
+                    'position': position,
+                    'projected_points': projected_points,
+                    'team': team
+                })
+                selected_names.add(name)
+                position_counts[position] += 1
+                team_counts[team] += 1
+            else:
+                all_players.append({
+                    'name': name,
+                    'position': position,
+                    'projected_points': projected_points,
+                    'team': team
+                })
 
     # Sort players by projected points descending.
     all_players.sort(key=lambda x: x['projected_points'], reverse=True)
@@ -77,7 +88,7 @@ def calculate_player_scores(standings, excluded_players):
         if position_counts[position] < POSITION_REQUIREMENTS[position]['min']:
             adjusted_score += 50  # bonus for filling a required slot
         if team_counts[team] > 0:
-            adjusted_score -= 80  # penalty for duplicate team
+            adjusted_score -= 20  # penalty for duplicate team
 
         roster.append({
             'name': name,
@@ -88,7 +99,8 @@ def calculate_player_scores(standings, excluded_players):
         })
         selected_names.add(name)
         position_counts[position] += 1
-        team_counts[team] += 1
+        if team != "Unknown":
+            team_counts[team] += 1
         player_scores[name] = adjusted_score
 
     # Ensure mandatory positions are filled if missing.
@@ -128,12 +140,15 @@ def calculate_player_scores(standings, excluded_players):
                 break
 
     # Final sorting and trimming.
-    roster = sorted(roster, key=lambda player: player['adjusted_score'], reverse=True)
     if len(roster) > ROSTER_LIMIT:
         roster = roster[:ROSTER_LIMIT]
 
     if not requirements_met(roster):
         print("Constructed roster does not meet all requirements. Saving roster anyway.")
+
+    # Remove any players already in the user's team
+    roster = [player for player in roster if player['name'] not in user_team]
+    roster = sorted(roster, key=lambda player: player['adjusted_score'], reverse=True)
 
     return player_scores, roster
 
@@ -159,7 +174,7 @@ def add_dst_rankings(standings):
     standings['DST'] = dst_players
     return standings
 
-def get_roster(excluded_players=None):
+def get_roster(user_team=[], excluded_players=None):
     """
     Generates the roster while allowing exclusion of specific players.
     :param excluded_players: List of player names to exclude from the final roster.
@@ -169,7 +184,7 @@ def get_roster(excluded_players=None):
 
     standings = playerPicker.standings
     standings = add_dst_rankings(standings)
-    player_scores, roster = calculate_player_scores(standings, excluded_players)
+    player_scores, roster = calculate_player_scores(standings, user_team, excluded_players)
     return roster
 
 if __name__ == "__main__":
