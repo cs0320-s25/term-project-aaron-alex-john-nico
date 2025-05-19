@@ -130,6 +130,19 @@ def turn_to_json(standings_dict, output_filename='final_standings.json'):
         print(f"An error occurred while writing to JSON: {e}")
 
 # Generate and save standings
-standings = final_standings_players(results)
+# Predict on full dataset
+X_scaled = scaler.transform(X)
+full_predictions = model.predict(X_scaled)
+
+# Combine with full metadata
+full_results = pd.DataFrame(X_scaled, columns=X.columns)
+full_results['predicted_points'] = full_predictions
+full_results['position'] = original_positions.values
+full_results['player_display_name'] = original_names.values
+full_results['team'] = updated_teams
+full_results['season'] = 2024
+
+# Use this for final standings
+standings = final_standings_players(full_results)
 #turn_to_json(standings)
 

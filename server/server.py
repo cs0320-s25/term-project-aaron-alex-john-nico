@@ -9,8 +9,28 @@ from handlers import (
     make_fetch_opp_players_handler,
     best_player_handler
 )
-from playerPicker import data
+import playerPicker
 
+
+def load_data():
+    ''''
+    Returns:
+        data - a dataframe that contains all of the information about each player.
+
+    Loads in the data of all the players in the playerPicker class, and merges that dataframe to also include
+    the predicted points from the nerual net.
+    '''
+    # First, drop the old column
+    data = playerPicker.data.drop(columns=['fantasy_points_ppr'])
+    standings = playerPicker.full_results
+    
+    # Merge on player_display_name
+    data = data.merge(
+        standings[['player_display_name', 'predicted_points']],
+        on='player_display_name',
+        how='left'  # keeps all players in `data`, even if not found in `standings`
+    )
+    return data
 
 def create_app():
     '''
@@ -21,9 +41,10 @@ def create_app():
     #CORS(app)
     CORS(app,supports_credentials=True, origins=["http://localhost:5173"])
 
+    
 
     # Variables to hold all of the players, user's players, and opponent's players for dependency injection.
-    available_players = data # dataframe from playerPicker class that holds all players' information
+    available_players = load_data() # dataframe from playerPicker class that holds all players' information
     user_team = []
     opp_team = []
 

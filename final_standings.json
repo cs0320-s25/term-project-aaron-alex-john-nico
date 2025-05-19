@@ -1,14 +1,486 @@
 {
+    "QB": [
+        [
+            "Lamar Jackson",
+            392.2171999999999,
+            "Unknown"
+        ],
+        [
+            "Baker Mayfield",
+            355.8335999999999,
+            "Unknown"
+        ],
+        [
+            "Joe Burrow",
+            336.4914,
+            "Unknown"
+        ],
+        [
+            "Jayden Daniels",
+            333.3711999999999,
+            "Unknown"
+        ],
+        [
+            "Jared Goff",
+            319.9639999999997,
+            "Unknown"
+        ],
+        [
+            "Josh Allen",
+            309.37340000000006,
+            "Unknown"
+        ],
+        [
+            "Bo Nix",
+            303.81540000000035,
+            "Unknown"
+        ],
+        [
+            "Sam Darnold",
+            301.9784000000001,
+            "Unknown"
+        ],
+        [
+            "Kyler Murray",
+            297.9858000000003,
+            "Unknown"
+        ],
+        [
+            "Jalen Hurts",
+            294.2769999999999,
+            "Unknown"
+        ],
+        [
+            "Patrick Mahomes",
+            282.6964000000004,
+            "Unknown"
+        ],
+        [
+            "Justin Herbert",
+            279.39200000000034,
+            "Unknown"
+        ],
+        [
+            "Geno Smith",
+            275.76740000000007,
+            "Unknown"
+        ],
+        [
+            "Caleb Williams",
+            275.2840000000003,
+            "Unknown"
+        ],
+        [
+            "Brock Purdy",
+            267.9054000000003,
+            "Unknown"
+        ],
+        [
+            "Aaron Rodgers",
+            259.8908000000004,
+            "None"
+        ],
+        [
+            "Jordan Love",
+            248.62480000000025,
+            "Unknown"
+        ],
+        [
+            "C.J. Stroud",
+            235.87400000000014,
+            "Unknown"
+        ],
+        [
+            "Matthew Stafford",
+            231.36280000000036,
+            "Unknown"
+        ],
+        [
+            "Kirk Cousins",
+            219.33560000000017,
+            "Unknown"
+        ],
+        [
+            "Bryce Young",
+            211.18200000000022,
+            "CAR"
+        ],
+        [
+            "Drake Maye",
+            164.82999999999993,
+            "Unknown"
+        ],
+        [
+            "Russell Wilson",
+            156.56800000000018,
+            "Unknown"
+        ],
+        [
+            "Anthony Richardson",
+            143.79940000000005,
+            "Unknown"
+        ],
+        [
+            "Trevor Lawrence",
+            139.6112000000001,
+            "JAX"
+        ],
+        [
+            "Daniel Jones",
+            139.15879999999993,
+            "IND"
+        ],
+        [
+            "Derek Carr",
+            136.86039999999986,
+            "NO"
+        ],
+        [
+            "Jameis Winston",
+            136.3954,
+            "CLE"
+        ],
+        [
+            "Tua Tagovailoa",
+            135.9356,
+            "Unknown"
+        ],
+        [
+            "Will Levis",
+            127.99540000000007,
+            "TEN"
+        ],
+        [
+            "Cooper Rush",
+            115.19059999999996,
+            "BAL"
+        ],
+        [
+            "Mac Jones",
+            113.2319999999999,
+            "SF"
+        ],
+        [
+            "Justin Fields",
+            110.59839999999994,
+            "NYJ"
+        ],
+        [
+            "Gardner Minshew",
+            108.97259999999993,
+            "KC"
+        ],
+        [
+            "Dak Prescott",
+            98.85339999999991,
+            "DAL"
+        ],
+        [
+            "Mason Rudolph",
+            96.42859999999993,
+            "PIT"
+        ],
+        [
+            "Aidan O'Connell",
+            94.77239999999983,
+            "LV"
+        ],
+        [
+            "Drew Lock",
+            85.76920000000001,
+            "NYG"
+        ],
+        [
+            "Joe Flacco",
+            81.68219999999998,
+            "IND"
+        ],
+        [
+            "Deshaun Watson",
+            78.86940000000004,
+            "CLE"
+        ],
+        [
+            "Taysom Hill",
+            75.96559999999995,
+            "NO"
+        ],
+        [
+            "Spencer Rattler",
+            73.3196,
+            "NO"
+        ],
+        [
+            "Andy Dalton",
+            60.77359999999999,
+            "CAR"
+        ],
+        [
+            "Tyler Huntley",
+            56.505799999999994,
+            "MIA"
+        ],
+        [
+            "Malik Willis",
+            47.446800000000074,
+            "GB"
+        ],
+        [
+            "Jacoby Brissett",
+            44.683999999999926,
+            "ARI"
+        ],
+        [
+            "Marcus Mariota",
+            40.819000000000074,
+            "WSH"
+        ],
+        [
+            "Dorian Thompson-Robinson",
+            38.21440000000002,
+            "PHI"
+        ],
+        [
+            "Michael Penix",
+            35.76419999999998,
+            "Unknown"
+        ],
+        [
+            "Joshua Dobbs",
+            29.54340000000001,
+            "NE"
+        ],
+        [
+            "Tanner McKee",
+            25.226800000000004,
+            "PHI"
+        ],
+        [
+            "Desmond Ridder",
+            25.20400000000002,
+            "LV"
+        ],
+        [
+            "Kenny Pickett",
+            23.721800000000012,
+            "CLE"
+        ],
+        [
+            "Jimmy Garoppolo",
+            21.176199999999977,
+            "LAR"
+        ],
+        [
+            "Mitchell Trubisky",
+            20.771799999999995,
+            "BUF"
+        ],
+        [
+            "Jake Haener",
+            18.4936,
+            "NO"
+        ],
+        [
+            "Tyrod Taylor",
+            18.20559999999997,
+            "NYJ"
+        ],
+        [
+            "Joe Milton",
+            17.071800000000007,
+            "Unknown"
+        ],
+        [
+            "Tim Boyle",
+            13.80280000000002,
+            "NYG"
+        ],
+        [
+            "Tommy DeVito",
+            13.609200000000012,
+            "NYG"
+        ],
+        [
+            "Trey Lance",
+            13.387600000000006,
+            "DAL"
+        ],
+        [
+            "Davis Mills",
+            9.159200000000013,
+            "HOU"
+        ],
+        [
+            "Skylar Thompson",
+            7.7728,
+            "PIT"
+        ],
+        [
+            "Bailey Zappe",
+            7.752200000000001,
+            "KC"
+        ],
+        [
+            "Brandon Allen",
+            7.471600000000008,
+            "TEN"
+        ],
+        [
+            "Carson Wentz",
+            5.2132000000000085,
+            "KC"
+        ],
+        [
+            "Taylor Heinicke",
+            2.8068000000000013,
+            "LAC"
+        ],
+        [
+            "Hendon Hooker",
+            2.3118000000000034,
+            "DET"
+        ],
+        [
+            "Sam Howell",
+            2.1116000000000015,
+            "SEA"
+        ],
+        [
+            "Clayton Tune",
+            1.553199999999999,
+            "ARI"
+        ],
+        [
+            "Mike White",
+            1.3318000000000014,
+            "Unknown"
+        ],
+        [
+            "Kyle Allen",
+            0.8638000000000006,
+            "DET"
+        ],
+        [
+            "Nick Mullens",
+            0.8634,
+            "JAX"
+        ],
+        [
+            "Josh Johnson",
+            0.7016000000000006,
+            "BAL"
+        ],
+        [
+            "Jarrett Stidham",
+            0.5297999999999999,
+            "DEN"
+        ],
+        [
+            "Chris Oladokun",
+            0.4629999999999999,
+            "Unknown"
+        ],
+        [
+            "Tyson Bagent",
+            0.15320000000000003,
+            "CHI"
+        ],
+        [
+            "Jake Browning",
+            0.05700000000000001,
+            "CIN"
+        ],
+        [
+            "Kyle Trask",
+            -0.035000000000000045,
+            "TB"
+        ]
+    ],
     "TE": [
+        [
+            "Brock Bowers",
+            259.51940000000025,
+            "Unknown"
+        ],
+        [
+            "Trey McBride",
+            246.5117999999997,
+            "Unknown"
+        ],
         [
             "George Kittle",
             242.01999999999992,
             "Unknown"
         ],
         [
+            "Jonnu Smith",
+            221.07699999999974,
+            "Unknown"
+        ],
+        [
+            "Travis Kelce",
+            196.683,
+            "Unknown"
+        ],
+        [
+            "Mark Andrews",
+            178.83499999999978,
+            "Unknown"
+        ],
+        [
+            "Zach Ertz",
+            174.69699999999986,
+            "Unknown"
+        ],
+        [
+            "Sam LaPorta",
+            172.82600000000005,
+            "Unknown"
+        ],
+        [
+            "Pat Freiermuth",
+            169.22999999999973,
+            "Unknown"
+        ],
+        [
+            "Tucker Kraft",
+            167.65199999999987,
+            "Unknown"
+        ],
+        [
             "David Njoku",
             162.1958,
             "Unknown"
+        ],
+        [
+            "Hunter Henry",
+            147.77299999999983,
+            "Unknown"
+        ],
+        [
+            "Mike Gesicki",
+            142.77499999999998,
+            "Unknown"
+        ],
+        [
+            "Cade Otton",
+            140.3970000000001,
+            "Unknown"
+        ],
+        [
+            "Kyle Pitts",
+            130.53100000000006,
+            "Unknown"
+        ],
+        [
+            "Isaiah Likely",
+            123.28100000000002,
+            "BAL"
+        ],
+        [
+            "Tyler Conklin",
+            122.85099999999987,
+            "NYJ"
         ],
         [
             "Dalton Schultz",
@@ -21,6 +493,11 @@
             "Unknown"
         ],
         [
+            "Cole Kmet",
+            119.90099999999984,
+            "CHI"
+        ],
+        [
             "Austin Hooper",
             118.09499999999994,
             "NE"
@@ -31,9 +508,99 @@
             "Unknown"
         ],
         [
+            "Chig Okonkwo",
+            114.96800000000017,
+            "Unknown"
+        ],
+        [
+            "Chigoziem Okonkwo",
+            114.96800000000017,
+            "Unknown"
+        ],
+        [
+            "Noah Gray",
+            114.64199999999991,
+            "KC"
+        ],
+        [
+            "Will Dissly",
+            113.93300000000008,
+            "Unknown"
+        ],
+        [
+            "Noah Fant",
+            108.25499999999997,
+            "SEA"
+        ],
+        [
+            "Dallas Goedert",
+            102.4698000000001,
+            "Unknown"
+        ],
+        [
+            "Dalton Kincaid",
+            100.23859999999999,
+            "Unknown"
+        ],
+        [
+            "Foster Moreau",
+            99.61099999999996,
+            "NO"
+        ],
+        [
+            "Brenton Strange",
+            96.28000000000011,
+            "JAX"
+        ],
+        [
+            "Jordan Akins",
+            95.62900000000002,
+            "CLE"
+        ],
+        [
+            "Evan Engram",
+            93.9886,
+            "Unknown"
+        ],
+        [
+            "T.J. Hockenson",
+            90.47420000000004,
+            "Unknown"
+        ],
+        [
+            "Ja'Tavion Sanders",
+            79.71759999999993,
+            "CAR"
+        ],
+        [
             "Taysom Hill",
             75.25139999999996,
             "NO"
+        ],
+        [
+            "A.J. Barner",
+            74.38259999999998,
+            "Unknown"
+        ],
+        [
+            "Theo Johnson",
+            72.25200000000007,
+            "NYG"
+        ],
+        [
+            "Colby Parkinson",
+            67.32799999999993,
+            "LAR"
+        ],
+        [
+            "Josh Whyle",
+            62.34100000000005,
+            "TEN"
+        ],
+        [
+            "Josh Oliver",
+            62.16480000000006,
+            "MIN"
         ],
         [
             "Dawson Knox",
@@ -41,9 +608,74 @@
             "BUF"
         ],
         [
+            "Grant Calcaterra",
+            59.85160000000006,
+            "PHI"
+        ],
+        [
             "Luke Schoonmaker",
             57.72880000000001,
             "DAL"
+        ],
+        [
+            "Tommy Tremble",
+            56.654999999999966,
+            "CAR"
+        ],
+        [
+            "Elijah Higgins",
+            51.59559999999992,
+            "ARI"
+        ],
+        [
+            "Nick Vannett",
+            46.92899999999999,
+            "TEN"
+        ],
+        [
+            "Darnell Washington",
+            44.538000000000004,
+            "PIT"
+        ],
+        [
+            "Johnny Mundt",
+            43.99599999999993,
+            "JAX"
+        ],
+        [
+            "Nate Adkins",
+            41.907,
+            "DEN"
+        ],
+        [
+            "Adam Trautman",
+            41.867000000000054,
+            "DEN"
+        ],
+        [
+            "Tanner Hudson",
+            40.55699999999999,
+            "CIN"
+        ],
+        [
+            "Erick All",
+            38.70740000000002,
+            "Unknown"
+        ],
+        [
+            "Stone Smartt",
+            38.522400000000054,
+            "NYJ"
+        ],
+        [
+            "Michael Mayer",
+            38.110399999999956,
+            "LV"
+        ],
+        [
+            "Drew Sample",
+            37.63039999999999,
+            "CIN"
         ],
         [
             "Jeremy Ruckert",
@@ -51,13 +683,53 @@
             "NYJ"
         ],
         [
+            "Cade Stover",
+            36.83600000000002,
+            "HOU"
+        ],
+        [
+            "Kylen Granson",
+            36.41059999999995,
+            "PHI"
+        ],
+        [
+            "Lucas Krull",
+            35.77999999999995,
+            "DEN"
+        ],
+        [
+            "Mo Alie-Cox",
+            34.36399999999997,
+            "IND"
+        ],
+        [
+            "Payne Durham",
+            32.36199999999999,
+            "TB"
+        ],
+        [
             "Brock Wright",
             31.775999999999975,
             "DET"
         ],
         [
+            "Daniel Bellinger",
+            27.893000000000008,
+            "NYG"
+        ],
+        [
+            "Charlie Kolar",
+            27.68600000000002,
+            "BAL"
+        ],
+        [
             "Luke Farrell",
             26.962000000000007,
+            "SF"
+        ],
+        [
+            "Eric Saubert",
+            26.951999999999984,
             "SF"
         ],
         [
@@ -66,9 +738,64 @@
             "Unknown"
         ],
         [
+            "Julian Hill",
+            24.99000000000001,
+            "MIA"
+        ],
+        [
+            "Tyler Higbee",
+            23.347999999999974,
+            "LAR"
+        ],
+        [
+            "Brevyn Spann-Ford",
+            17.665999999999976,
+            "DAL"
+        ],
+        [
+            "Harrison Bryant",
+            17.60099999999998,
+            "PHI"
+        ],
+        [
+            "Durham Smythe",
+            17.295999999999985,
+            "CHI"
+        ],
+        [
+            "Blake Whiteheart",
+            16.57099999999999,
+            "Unknown"
+        ],
+        [
+            "John Bates",
+            16.424000000000017,
+            "WSH"
+        ],
+        [
             "Pharaoh Brown",
             15.872600000000002,
             "MIA"
+        ],
+        [
+            "MyCole Pruitt",
+            15.836000000000006,
+            "PIT"
+        ],
+        [
+            "Kenny Yeboah",
+            15.79800000000002,
+            "DET"
+        ],
+        [
+            "Hayden Hurst",
+            15.200999999999983,
+            "LAC"
+        ],
+        [
+            "Connor Heyward",
+            15.190200000000003,
+            "PIT"
         ],
         [
             "Hunter Long",
@@ -86,9 +813,49 @@
             "GB"
         ],
         [
+            "Ben Sinnott",
+            13.260999999999989,
+            "WSH"
+        ],
+        [
+            "Devin Culp",
+            12.872999999999989,
+            "TB"
+        ],
+        [
+            "Charlie Woerner",
+            12.462399999999993,
+            "ATL"
+        ],
+        [
+            "Gerald Everett",
+            12.453399999999993,
+            "None"
+        ],
+        [
             "Tip Reiman",
             12.083999999999998,
             "ARI"
+        ],
+        [
+            "Tucker Fisk",
+            11.608999999999998,
+            "LAC"
+        ],
+        [
+            "Davis Allen",
+            11.402999999999995,
+            "LAR"
+        ],
+        [
+            "Greg Dulcich",
+            11.001999999999992,
+            "NYG"
+        ],
+        [
+            "Peyton Hendershot",
+            10.753000000000002,
+            "KC"
         ],
         [
             "Chris Manhertz",
@@ -96,9 +863,34 @@
             "NYG"
         ],
         [
+            "Cam Grandy",
+            9.833999999999994,
+            "Unknown"
+        ],
+        [
+            "Ben Sims",
+            8.572000000000013,
+            "GB"
+        ],
+        [
+            "Will Mallory",
+            7.95599999999999,
+            "Unknown"
+        ],
+        [
             "E.J. Jenkins",
             7.145999999999995,
             "PHI"
+        ],
+        [
+            "Dallin Holker",
+            5.198000000000005,
+            "Unknown"
+        ],
+        [
+            "Josiah Deguara",
+            4.557999999999995,
+            "Unknown"
         ],
         [
             "Shane Zylstra",
@@ -106,8 +898,43 @@
             "DET"
         ],
         [
+            "Jaheim Bell",
+            4.281000000000001,
+            "NE"
+        ],
+        [
+            "Ian Thomas",
+            4.111999999999994,
+            "CAR"
+        ],
+        [
+            "Eric Tomlinson",
+            3.0537999999999976,
+            "Unknown"
+        ],
+        [
+            "Jack Stoll",
+            3.0509999999999993,
+            "Unknown"
+        ],
+        [
+            "Brevin Jordan",
+            2.699999999999996,
+            "HOU"
+        ],
+        [
+            "Feleipe Franks",
+            2.3939999999999966,
+            "CAR"
+        ],
+        [
             "Zach Davidson",
             2.075,
+            "Unknown"
+        ],
+        [
+            "Joseph Fortson",
+            1.8789999999999998,
             "Unknown"
         ],
         [
@@ -116,8 +943,33 @@
             "Unknown"
         ],
         [
+            "Geoff Swaim",
+            1.753999999999999,
+            "Unknown"
+        ],
+        [
+            "Jared Wiley",
+            1.6829999999999992,
+            "KC"
+        ],
+        [
             "John Samuel Shenker",
             1.6070000000000002,
+            "Unknown"
+        ],
+        [
+            "Ross Dwelley",
+            1.6059999999999999,
+            "None"
+        ],
+        [
+            "Marcedes Lewis",
+            1.3580000000000008,
+            "CHI"
+        ],
+        [
+            "John FitzPatrick",
+            1.3340000000000012,
             "Unknown"
         ],
         [
@@ -131,15 +983,176 @@
             "Unknown"
         ],
         [
+            "Brenden Bates",
+            0.198,
+            "Unknown"
+        ],
+        [
+            "Brayden Willis",
+            0.198,
+            "Unknown"
+        ],
+        [
             "Stephen Sullivan",
             0.0788,
             "Unknown"
         ]
     ],
+    "P": [
+        [
+            "A.J. Cole",
+            1.1956000000000002,
+            "Unknown"
+        ],
+        [
+            "Matthew Hayball",
+            1.0435999999999992,
+            "Unknown"
+        ],
+        [
+            "Jack Fox",
+            0.6609999999999999,
+            "Unknown"
+        ],
+        [
+            "Johnny Hekker",
+            0.4961999999999999,
+            "Unknown"
+        ],
+        [
+            "Bryan Anger",
+            0.33959999999999996,
+            "Unknown"
+        ],
+        [
+            "J.K. Scott",
+            0.3348000000000002,
+            "Unknown"
+        ],
+        [
+            "Riley Dixon",
+            0.20280000000000004,
+            "Unknown"
+        ],
+        [
+            "Jake Bailey",
+            0.19180000000000008,
+            "Unknown"
+        ]
+    ],
+    "FS": [
+        [
+            "Juanyeh Thomas",
+            5.426999999999992,
+            "Unknown"
+        ],
+        [
+            "Rodney McLeod",
+            4.802,
+            "Unknown"
+        ],
+        [
+            "Dell Pettus",
+            2.5064,
+            "Unknown"
+        ]
+    ],
+    "FB": [
+        [
+            "Kyle Juszczyk",
+            57.812800000000024,
+            "SF"
+        ],
+        [
+            "Hunter Luepke",
+            33.884600000000006,
+            "DAL"
+        ],
+        [
+            "Michael Burton",
+            31.68660000000004,
+            "DEN"
+        ],
+        [
+            "Alec Ingold",
+            30.05080000000001,
+            "MIA"
+        ],
+        [
+            "C.J. Ham",
+            16.008399999999995,
+            "MIN"
+        ],
+        [
+            "Patrick Ricard",
+            10.966000000000015,
+            "BAL"
+        ],
+        [
+            "Scott Matlock",
+            7.86659999999999,
+            "LAC"
+        ],
+        [
+            "Reggie Gilliam",
+            1.6047999999999996,
+            "BUF"
+        ],
+        [
+            "Ben VanSumeren",
+            1.581,
+            "Unknown"
+        ],
+        [
+            "Adam Prentice",
+            0.6154000000000001,
+            "NO"
+        ],
+        [
+            "Andrew Beck",
+            0.231,
+            "Unknown"
+        ]
+    ],
     "WR": [
+        [
+            "Ja'Marr Chase",
+            358.6527999999999,
+            "Unknown"
+        ],
+        [
+            "Justin Jefferson",
+            305.31319999999977,
+            "Unknown"
+        ],
+        [
+            "Amon-Ra St. Brown",
+            301.3546000000001,
+            "Unknown"
+        ],
+        [
+            "Drake London",
+            279.6565999999997,
+            "Unknown"
+        ],
         [
             "Brian Thomas",
             273.73199999999997,
+            "Unknown"
+        ],
+        [
+            "Malik Nabers",
+            269.45059999999967,
+            "Unknown"
+        ],
+        [
+            "Terry McLaurin",
+            260.4773999999997,
+            "Unknown"
+        ],
+        [
+            "Garrett Wilson",
+            259.4744000000001,
             "Unknown"
         ],
         [
@@ -148,13 +1161,78 @@
             "Unknown"
         ],
         [
+            "Jaxon Smith-Njigba",
+            259.004,
+            "Unknown"
+        ],
+        [
+            "Jerry Jeudy",
+            251.1486000000001,
+            "Unknown"
+        ],
+        [
+            "Courtland Sutton",
+            247.7753999999997,
+            "Unknown"
+        ],
+        [
             "Ladd McConkey",
             244.87999999999982,
             "Unknown"
         ],
         [
+            "D.J. Moore",
+            237.7589999999999,
+            "Unknown"
+        ],
+        [
             "DJ Moore",
             237.34299999999993,
+            "Unknown"
+        ],
+        [
+            "Davante Adams",
+            236.12199999999976,
+            "Unknown"
+        ],
+        [
+            "Mike Evans",
+            232.38400000000001,
+            "Unknown"
+        ],
+        [
+            "Jakobi Meyers",
+            222.15999999999997,
+            "Unknown"
+        ],
+        [
+            "Tyreek Hill",
+            220.12980000000024,
+            "Unknown"
+        ],
+        [
+            "Tee Higgins",
+            214.3649999999999,
+            "Unknown"
+        ],
+        [
+            "Zay Flowers",
+            212.90500000000003,
+            "Unknown"
+        ],
+        [
+            "Jauan Jennings",
+            212.83799999999997,
+            "Unknown"
+        ],
+        [
+            "Nico Collins",
+            208.62399999999988,
+            "Unknown"
+        ],
+        [
+            "Jordan Addison",
+            204.69400000000005,
             "Unknown"
         ],
         [
@@ -168,8 +1246,198 @@
             "Unknown"
         ],
         [
+            "Calvin Ridley",
+            200.5500000000003,
+            "Unknown"
+        ],
+        [
+            "Marvin Harrison",
+            198.285,
+            "Unknown"
+        ],
+        [
+            "Puka Nacua",
+            196.62279999999998,
+            "Unknown"
+        ],
+        [
+            "Darnell Mooney",
+            195.6622000000003,
+            "Unknown"
+        ],
+        [
+            "DK Metcalf",
+            194.80100000000022,
+            "Unknown"
+        ],
+        [
+            "Jayden Reed",
+            193.65700000000007,
+            "Unknown"
+        ],
+        [
+            "Wan'Dale Robinson",
+            192.12200000000018,
+            "Unknown"
+        ],
+        [
+            "DeVonta Smith",
+            191.94699999999997,
+            "Unknown"
+        ],
+        [
+            "Khalil Shakir",
+            189.04300000000003,
+            "Unknown"
+        ],
+        [
+            "Josh Downs",
+            187.73900000000012,
+            "Unknown"
+        ],
+        [
+            "Keenan Allen",
+            182.52599999999998,
+            "Unknown"
+        ],
+        [
+            "Xavier Worthy",
+            181.2080000000002,
+            "Unknown"
+        ],
+        [
+            "Cooper Kupp",
+            177.63300000000004,
+            "Unknown"
+        ],
+        [
+            "Quentin Johnston",
+            175.08400000000017,
+            "Unknown"
+        ],
+        [
+            "George Pickens",
+            171.36399999999992,
+            "Unknown"
+        ],
+        [
+            "Rashod Bateman",
+            170.983,
+            "BAL"
+        ],
+        [
+            "Michael Pittman",
+            170.62699999999975,
+            "Unknown"
+        ],
+        [
+            "Alec Pierce",
+            167.9039999999999,
+            "Unknown"
+        ],
+        [
+            "Deebo Samuel Sr.",
+            151.27000000000015,
+            "Unknown"
+        ],
+        [
             "Deebo Samuel",
             151.27000000000015,
+            "Unknown"
+        ],
+        [
+            "Rome Odunze",
+            151.07099999999983,
+            "Unknown"
+        ],
+        [
+            "Jaylen Waddle",
+            150.08800000000014,
+            "Unknown"
+        ],
+        [
+            "Jalen Tolbert",
+            149.185,
+            "DAL"
+        ],
+        [
+            "Demario Douglas",
+            148.62500000000017,
+            "Unknown"
+        ],
+        [
+            "DeAndre Hopkins",
+            148.147,
+            "Unknown"
+        ],
+        [
+            "Tank Dell",
+            143.9572,
+            "Unknown"
+        ],
+        [
+            "Ray-Ray McCloud",
+            143.582,
+            "Unknown"
+        ],
+        [
+            "Adam Thielen",
+            135.26840000000004,
+            "Unknown"
+        ],
+        [
+            "Romeo Doubs",
+            130.0224000000002,
+            "Unknown"
+        ],
+        [
+            "Marvin Mims",
+            128.11800000000002,
+            "Unknown"
+        ],
+        [
+            "Marvin Mims Jr.",
+            128.11800000000002,
+            "DEN"
+        ],
+        [
+            "Jalen McMillan",
+            127.74839999999986,
+            "Unknown"
+        ],
+        [
+            "Allen Lazard",
+            127.4876,
+            "NYJ"
+        ],
+        [
+            "Tre Tucker",
+            127.29399999999988,
+            "LV"
+        ],
+        [
+            "Amari Cooper",
+            127.08320000000012,
+            "Unknown"
+        ],
+        [
+            "Nick Westbrook-Ikhine",
+            127.05020000000007,
+            "MIA"
+        ],
+        [
+            "Chris Godwin",
+            126.88079999999984,
+            "TB"
+        ],
+        [
+            "Xavier Legette",
+            124.2930000000001,
+            "Unknown"
+        ],
+        [
+            "Elijah Moore",
+            123.49499999999988,
             "Unknown"
         ],
         [
@@ -178,14 +1446,129 @@
             "LAR"
         ],
         [
+            "Tyler Lockett",
+            123.13099999999999,
+            "Unknown"
+        ],
+        [
+            "Michael Wilson",
+            122.57599999999998,
+            "ARI"
+        ],
+        [
+            "Calvin Austin III",
+            120.42699999999982,
+            "PIT"
+        ],
+        [
+            "Calvin Austin",
+            120.42699999999982,
+            "Unknown"
+        ],
+        [
+            "Kayshon Boutte",
+            120.25999999999989,
+            "NE"
+        ],
+        [
+            "Andrei Iosivas",
+            119.73499999999984,
+            "CIN"
+        ],
+        [
+            "Stefon Diggs",
+            118.04580000000007,
+            "HOU"
+        ],
+        [
+            "Olamide Zaccheaus",
+            115.33319999999986,
+            "CHI"
+        ],
+        [
+            "Darius Slayton",
+            112.85399999999998,
+            "NYG"
+        ],
+        [
+            "Dontayvion Wicks",
+            111.16499999999996,
+            "GB"
+        ],
+        [
             "Tyler Boyd",
             110.74879999999999,
             "TEN"
         ],
         [
+            "Josh Palmer",
+            109.60399999999989,
+            "Unknown"
+        ],
+        [
+            "Devaughn Vele",
+            109.16919999999999,
+            "DEN"
+        ],
+        [
+            "Adonai Mitchell",
+            108.25140000000009,
+            "IND"
+        ],
+        [
+            "Keon Coleman",
+            107.456,
+            "Unknown"
+        ],
+        [
+            "Greg Dortch",
+            102.97799999999998,
+            "ARI"
+        ],
+        [
+            "Christian Watson",
+            102.90159999999997,
+            "Unknown"
+        ],
+        [
+            "Jalen Nailor",
+            99.63699999999999,
+            "MIN"
+        ],
+        [
             "Demarcus Robinson",
             98.29559999999998,
             "Unknown"
+        ],
+        [
+            "Parker Washington",
+            96.92999999999998,
+            "JAX"
+        ],
+        [
+            "Mack Hollins",
+            95.885,
+            "NE"
+        ],
+        [
+            "Jalen Coker",
+            95.72560000000003,
+            "CAR"
+        ],
+        [
+            "Ricky Pearsall",
+            94.02080000000002,
+            "SF"
+        ],
+        [
+            "Tim Patrick",
+            93.76299999999992,
+            "DET"
+        ],
+        [
+            "Diontae Johnson",
+            92.36020000000012,
+            "BAL"
         ],
         [
             "Kavontae Turpin",
@@ -198,14 +1581,84 @@
             "DAL"
         ],
         [
+            "Noah Brown",
+            89.21720000000009,
+            "WSH"
+        ],
+        [
+            "Sterling Shepard",
+            88.72220000000003,
+            "TB"
+        ],
+        [
+            "Dyami Brown",
+            86.97519999999987,
+            "JAX"
+        ],
+        [
             "David Moore",
             86.60259999999998,
             "CAR"
         ],
         [
+            "Chris Olave",
+            79.82159999999993,
+            "Unknown"
+        ],
+        [
+            "Cedric Tillman",
+            79.71399999999996,
+            "Unknown"
+        ],
+        [
+            "Marquez Valdes-Scantling",
+            78.87500000000004,
+            "SEA"
+        ],
+        [
+            "Rashid Shaheed",
+            74.18840000000007,
+            "NO"
+        ],
+        [
+            "Troy Franklin",
+            70.33900000000004,
+            "DEN"
+        ],
+        [
+            "Kendrick Bourne",
+            69.63740000000008,
+            "NE"
+        ],
+        [
             "Christian Kirk",
             68.03399999999995,
             "HOU"
+        ],
+        [
+            "Brandin Cooks",
+            67.66880000000009,
+            "DAL"
+        ],
+        [
+            "Van Jefferson",
+            66.05320000000007,
+            "TEN"
+        ],
+        [
+            "Curtis Samuel",
+            64.93459999999993,
+            "BUF"
+        ],
+        [
+            "Brandon Aiyuk",
+            64.70199999999994,
+            "SF"
+        ],
+        [
+            "Lil'Jordan Humphrey",
+            64.52000000000007,
+            "DEN"
         ],
         [
             "Justin Watson",
@@ -218,9 +1671,79 @@
             "LAR"
         ],
         [
+            "Tyler Johnson",
+            61.610000000000056,
+            "LAR"
+        ],
+        [
+            "Malik Washington",
+            59.66900000000007,
+            "MIA"
+        ],
+        [
+            "Mike Williams",
+            57.065800000000074,
+            "Unknown"
+        ],
+        [
+            "Rashee Rice",
+            56.76199999999997,
+            "Unknown"
+        ],
+        [
+            "John Metchie",
+            56.69839999999995,
+            "Unknown"
+        ],
+        [
+            "John Metchie III",
+            56.66439999999995,
+            "HOU"
+        ],
+        [
+            "Gabe Davis",
+            54.90719999999997,
+            "Unknown"
+        ],
+        [
+            "Kalif Raymond",
+            54.585599999999985,
+            "DET"
+        ],
+        [
+            "JuJu Smith-Schuster",
+            53.47660000000002,
+            "KC"
+        ],
+        [
+            "Cedrick Wilson Jr.",
+            51.395199999999996,
+            "NO"
+        ],
+        [
             "Cedrick Wilson",
             51.395199999999996,
             "Unknown"
+        ],
+        [
+            "Nelson Agholor",
+            47.58599999999999,
+            "BAL"
+        ],
+        [
+            "D.J. Turner",
+            47.558,
+            "Unknown"
+        ],
+        [
+            "Jahan Dotson",
+            45.442200000000014,
+            "PHI"
+        ],
+        [
+            "Robert Woods",
+            42.58700000000005,
+            "HOU"
         ],
         [
             "Luke McCaffrey",
@@ -228,9 +1751,59 @@
             "WSH"
         ],
         [
+            "Jonathan Mingo",
+            38.67619999999995,
+            "DAL"
+        ],
+        [
+            "Derius Davis",
+            38.38199999999995,
+            "LAC"
+        ],
+        [
+            "Josh Reynolds",
+            37.25980000000005,
+            "None"
+        ],
+        [
+            "Trey Palmer",
+            36.04599999999996,
+            "TB"
+        ],
+        [
+            "Tylan Wallace",
+            35.12240000000004,
+            "BAL"
+        ],
+        [
+            "Ryan Miller",
+            34.90900000000002,
+            "TB"
+        ],
+        [
             "Jalen Brooks",
             34.89139999999998,
             "DAL"
+        ],
+        [
+            "Dante Pettis",
+            34.751400000000004,
+            "NO"
+        ],
+        [
+            "Ja'Lynn Polk",
+            32.977999999999966,
+            "NE"
+        ],
+        [
+            "Jake Bobo",
+            31.535999999999973,
+            "SEA"
+        ],
+        [
+            "Xavier Hutchinson",
+            31.35339999999997,
+            "HOU"
         ],
         [
             "Mecole Hardman",
@@ -238,14 +1811,79 @@
             "KC"
         ],
         [
+            "Kevin Austin",
+            29.279000000000007,
+            "Unknown"
+        ],
+        [
+            "Malik Heath",
+            28.914999999999967,
+            "GB"
+        ],
+        [
+            "KhaDarel Hodge",
+            28.292999999999964,
+            "ATL"
+        ],
+        [
+            "Mason Tipton",
+            28.064000000000032,
+            "NO"
+        ],
+        [
             "Devin Duvernay",
             25.958400000000005,
             "None"
         ],
         [
+            "Bub Means",
+            24.377999999999997,
+            "NO"
+        ],
+        [
             "Jamison Crowder",
             23.369999999999973,
             "WSH"
+        ],
+        [
+            "Rakim Jarrett",
+            23.21400000000002,
+            "TB"
+        ],
+        [
+            "Bo Melton",
+            21.583000000000006,
+            "GB"
+        ],
+        [
+            "Ryan Flournoy",
+            20.89800000000002,
+            "DAL"
+        ],
+        [
+            "Trent Sherfield",
+            20.763599999999986,
+            "Unknown"
+        ],
+        [
+            "Ashton Dulin",
+            19.26260000000002,
+            "IND"
+        ],
+        [
+            "Simi Fehoko",
+            18.696999999999974,
+            "ARI"
+        ],
+        [
+            "K.J. Osborn",
+            18.286000000000016,
+            "WSH"
+        ],
+        [
+            "Marquise Brown",
+            17.95499999999997,
+            "Unknown"
         ],
         [
             "Jalen Reagor",
@@ -258,6 +1896,11 @@
             "Unknown"
         ],
         [
+            "Zay Jones",
+            16.828000000000017,
+            "ARI"
+        ],
+        [
             "DeAndre Carter",
             16.698999999999984,
             "CHI"
@@ -268,9 +1911,69 @@
             "CIN"
         ],
         [
+            "Ainias Smith",
+            16.305000000000017,
+            "PHI"
+        ],
+        [
+            "Xavier Gipson",
+            15.952000000000014,
+            "NYJ"
+        ],
+        [
+            "Jalin Hyatt",
+            15.801000000000021,
+            "NYG"
+        ],
+        [
+            "Odell Beckham",
+            15.584200000000001,
+            "Unknown"
+        ],
+        [
+            "Johnny Wilson",
+            15.273999999999985,
+            "PHI"
+        ],
+        [
             "Brandon Powell",
             15.249999999999995,
             "MIN"
+        ],
+        [
+            "Mike Woods",
+            14.692,
+            "Unknown"
+        ],
+        [
+            "Chris Conley",
+            14.582999999999991,
+            "SF"
+        ],
+        [
+            "Laviska Shenault",
+            13.900000000000023,
+            "Unknown"
+        ],
+        [
+            "Laviska Shenault Jr.",
+            13.900000000000023,
+            "BUF"
+        ],
+        [
+            "River Cracraft",
+            13.562000000000003,
+            "MIA"
+        ],
+        [
+            "DJ Chark",
+            12.845999999999995,
+            "Unknown"
+        ],
+        [
+            "D.J. Chark",
+            12.845999999999995,
+            "Unknown"
         ],
         [
             "Parris Campbell",
@@ -278,9 +1981,59 @@
             "DAL"
         ],
         [
+            "Tyrell Shavers",
+            12.589,
+            "BUF"
+        ],
+        [
+            "Scott Miller",
+            12.539000000000003,
+            "Unknown"
+        ],
+        [
+            "Jacob Cowing",
+            12.261000000000019,
+            "SF"
+        ],
+        [
+            "Ben Skowronek",
+            12.213999999999999,
+            "PIT"
+        ],
+        [
+            "Tay Martin",
+            11.298999999999994,
+            "Unknown"
+        ],
+        [
+            "Britain Covey",
+            11.189999999999996,
+            "PHI"
+        ],
+        [
+            "Tyquan Thornton",
+            9.037000000000008,
+            "KC"
+        ],
+        [
+            "Devontez Walker",
+            8.754000000000007,
+            "BAL"
+        ],
+        [
+            "Treylon Burks",
+            8.627600000000003,
+            "TEN"
+        ],
+        [
             "Allen Robinson",
             8.30440000000001,
             "DET"
+        ],
+        [
+            "Malachi Corley",
+            7.952600000000007,
+            "NYJ"
         ],
         [
             "Kristian Wilkerson",
@@ -293,9 +2046,64 @@
             "JAX"
         ],
         [
+            "Terrace Marshall",
+            7.34400000000001,
+            "Unknown"
+        ],
+        [
+            "Terrace Marshall Jr.",
+            7.34400000000001,
+            "LV"
+        ],
+        [
+            "Dee Eskridge",
+            7.286999999999991,
+            "Unknown"
+        ],
+        [
+            "D'Wayne Eskridge",
+            7.25699999999999,
+            "Unknown"
+        ],
+        [
+            "Nikko Remigio",
+            7.119999999999996,
+            "KC"
+        ],
+        [
+            "Dan Chisena",
+            6.857000000000002,
+            "Unknown"
+        ],
+        [
+            "Deven Thompkins",
+            6.623000000000003,
+            "CAR"
+        ],
+        [
+            "Cody White",
+            6.50799999999999,
+            "Unknown"
+        ],
+        [
+            "Alex Bachman",
+            6.473000000000008,
+            "Unknown"
+        ],
+        [
             "David Bell",
             6.459,
             "CLE"
+        ],
+        [
+            "Jamari Thrash",
+            6.398000000000005,
+            "CLE"
+        ],
+        [
+            "Austin Trammell",
+            6.271999999999996,
+            "Unknown"
         ],
         [
             "Trenton Irwin",
@@ -308,9 +2116,94 @@
             "LAR"
         ],
         [
+            "James Proche",
+            5.166000000000006,
+            "Unknown"
+        ],
+        [
+            "Ronnie Bell",
+            5.127999999999993,
+            "DET"
+        ],
+        [
+            "Bryce Ford-Wheaton",
+            4.9864,
+            "NYG"
+        ],
+        [
+            "Ihmir Smith-Marsette",
+            4.922000000000001,
+            "NYG"
+        ],
+        [
             "Anthony Gould",
             4.759999999999996,
             "IND"
+        ],
+        [
+            "Tanner Conner",
+            4.554000000000003,
+            "Unknown"
+        ],
+        [
+            "Mason Kinsey",
+            3.6229999999999944,
+            "Unknown"
+        ],
+        [
+            "Isaiah Hodgins",
+            3.1239999999999952,
+            "SF"
+        ],
+        [
+            "Grant DuBose",
+            3.060999999999999,
+            "Unknown"
+        ],
+        [
+            "Chris Blair",
+            2.8289999999999957,
+            "ATL"
+        ],
+        [
+            "Velus Jones",
+            2.7990000000000013,
+            "Unknown"
+        ],
+        [
+            "Anthony Miller",
+            2.707999999999997,
+            "Unknown"
+        ],
+        [
+            "Casey Washington",
+            2.515000000000001,
+            "ATL"
+        ],
+        [
+            "Isaiah Williams",
+            2.504999999999997,
+            "CIN"
+        ],
+        [
+            "Javon Baker",
+            2.364799999999996,
+            "NE"
+        ],
+        [
+            "Trent Taylor",
+            2.1829999999999985,
+            "Unknown"
+        ],
+        [
+            "Brandon Johnson",
+            1.9700000000000022,
+            "Unknown"
+        ],
+        [
+            "Kendric Pryor",
+            1.9630000000000023,
+            "Unknown"
         ],
         [
             "Charlie Jones",
@@ -323,20 +2216,130 @@
             "CHI"
         ],
         [
+            "Ramel Keyton",
+            1.773999999999999,
+            "Unknown"
+        ],
+        [
             "Tyler Scott",
             1.697,
             "CHI"
         ],
         [
+            "Jaelon Darden",
+            1.6659999999999981,
+            "SEA"
+        ],
+        [
+            "Jha'Quan Jackson",
+            1.6100000000000012,
+            "TEN"
+        ],
+        [
+            "Robbie Chosen",
+            1.5819999999999996,
+            "None"
+        ],
+        [
             "John Ross",
             1.5729999999999995,
             "Unknown"
+        ],
+        [
+            "Brycen Tremayne",
+            1.0059999999999993,
+            "Unknown"
+        ],
+        [
+            "Kameron Johnson",
+            0.7759999999999999,
+            "TB"
+        ],
+        [
+            "Steven Sims",
+            0.559,
+            "BAL"
+        ],
+        [
+            "Jermaine Jackson",
+            0.4713999999999998,
+            "Unknown"
+        ],
+        [
+            "Braxton Berrios",
+            0.225,
+            "HOU"
+        ],
+        [
+            "Xavier Weaver",
+            0.17079999999999998,
+            "ARI"
+        ],
+        [
+            "Irvin Charles",
+            0.136,
+            "Unknown"
+        ],
+        [
+            "Justyn Ross",
+            0.13,
+            "KC"
+        ],
+        [
+            "Dareke Young",
+            0.079,
+            "SEA"
+        ],
+        [
+            "Tom Kennedy",
+            0.0788,
+            "DET"
+        ],
+        [
+            "Skyy Moore",
+            0.0788,
+            "KC"
+        ],
+        [
+            "Erik Ezukanma",
+            0.076,
+            "Unknown"
+        ],
+        [
+            "Kadarius Toney",
+            -0.10700000000000015,
+            "None"
         ]
     ],
     "RB": [
         [
+            "Jahmyr Gibbs",
+            311.4680000000003,
+            "Unknown"
+        ],
+        [
+            "Saquon Barkley",
+            310.0419999999997,
+            "Unknown"
+        ],
+        [
+            "Devon Achane",
+            289.29500000000036,
+            "Unknown"
+        ],
+        [
             "Bijan Robinson",
             288.3570000000002,
+            "Unknown"
+        ],
+        [
+            "De'Von Achane",
+            288.15500000000037,
+            "Unknown"
+        ],
+        [
+            "Kyren Williams",
+            277.3237999999997,
             "Unknown"
         ],
         [
@@ -350,8 +2353,58 @@
             "Unknown"
         ],
         [
+            "Alvin Kamara",
+            254.28419999999971,
+            "Unknown"
+        ],
+        [
+            "James Cook",
+            251.66900000000035,
+            "Unknown"
+        ],
+        [
+            "Chase Brown",
+            247.704,
+            "Unknown"
+        ],
+        [
+            "Joe Mixon",
+            241.01539999999997,
+            "Unknown"
+        ],
+        [
+            "Chuba Hubbard",
+            240.68699999999987,
+            "Unknown"
+        ],
+        [
+            "Aaron Jones",
+            238.53419999999983,
+            "Unknown"
+        ],
+        [
+            "Breece Hall",
+            238.45040000000006,
+            "Unknown"
+        ],
+        [
             "James Conner",
             237.26899999999998,
+            "Unknown"
+        ],
+        [
+            "Bucky Irving",
+            235.53080000000006,
+            "Unknown"
+        ],
+        [
+            "Jonathan Taylor",
+            228.9960000000002,
+            "Unknown"
+        ],
+        [
+            "D'Andre Swift",
+            223.04319999999998,
             "Unknown"
         ],
         [
@@ -360,8 +2413,38 @@
             "Unknown"
         ],
         [
+            "Tony Pollard",
+            208.18100000000032,
+            "Unknown"
+        ],
+        [
+            "Rico Dowdle",
+            204.79299999999992,
+            "Unknown"
+        ],
+        [
             "David Montgomery",
             195.37159999999986,
+            "Unknown"
+        ],
+        [
+            "Tyrone Tracy",
+            192.72639999999973,
+            "Unknown"
+        ],
+        [
+            "Rhamondre Stevenson",
+            182.34199999999993,
+            "Unknown"
+        ],
+        [
+            "J.K. Dobbins",
+            177.12119999999973,
+            "Unknown"
+        ],
+        [
+            "Kenneth Walker III",
+            164.05480000000014,
             "Unknown"
         ],
         [
@@ -385,9 +2468,139 @@
             "Unknown"
         ],
         [
+            "Brian Robinson",
+            143.9369999999998,
+            "Unknown"
+        ],
+        [
+            "Tank Bigsby",
+            139.25760000000002,
+            "Unknown"
+        ],
+        [
+            "Alexander Mattison",
+            135.86099999999988,
+            "Unknown"
+        ],
+        [
+            "Jerome Ford",
+            130.65800000000002,
+            "Unknown"
+        ],
+        [
+            "Travis Etienne",
+            130.5820000000001,
+            "Unknown"
+        ],
+        [
+            "Austin Ekeler",
+            127.16699999999987,
+            "Unknown"
+        ],
+        [
+            "Justice Hill",
+            125.77000000000017,
+            "BAL"
+        ],
+        [
+            "Ameer Abdullah",
+            125.08100000000009,
+            "Unknown"
+        ],
+        [
+            "Jaylen Warren",
+            124.59300000000013,
+            "Unknown"
+        ],
+        [
             "Kareem Hunt",
             109.14219999999997,
             "Unknown"
+        ],
+        [
+            "Ray Davis",
+            108.70400000000014,
+            "BUF"
+        ],
+        [
+            "Tyler Allgeier",
+            107.61300000000007,
+            "Unknown"
+        ],
+        [
+            "Tyjae Spears",
+            104.66720000000011,
+            "Unknown"
+        ],
+        [
+            "Antonio Gibson",
+            102.0767999999999,
+            "NE"
+        ],
+        [
+            "Devin Singletary",
+            100.28820000000007,
+            "Unknown"
+        ],
+        [
+            "Jordan Mason",
+            99.06299999999997,
+            "MIN"
+        ],
+        [
+            "Jaleel McLaughlin",
+            97.46200000000003,
+            "Unknown"
+        ],
+        [
+            "Emanuel Wilson",
+            95.71520000000002,
+            "GB"
+        ],
+        [
+            "Cam Akers",
+            95.002,
+            "MIN"
+        ],
+        [
+            "Isaac Guerendo",
+            88.63939999999995,
+            "Unknown"
+        ],
+        [
+            "Braelon Allen",
+            85.26459999999993,
+            "NYJ"
+        ],
+        [
+            "Ty Johnson",
+            84.90999999999994,
+            "BUF"
+        ],
+        [
+            "Samaje Perine",
+            78.40499999999992,
+            "CIN"
+        ],
+        [
+            "Zack Moss",
+            76.3599999999999,
+            "Unknown"
+        ],
+        [
+            "Roschon Johnson",
+            75.8465999999999,
+            "Unknown"
+        ],
+        [
+            "Raheem Mostert",
+            72.45799999999991,
+            "LV"
+        ],
+        [
+            "Miles Sanders",
+            70.95800000000004,
+            "DAL"
         ],
         [
             "Kenneth Gainwell",
@@ -395,9 +2608,49 @@
             "PIT"
         ],
         [
+            "Gus Edwards",
+            64.22500000000007,
+            "Unknown"
+        ],
+        [
+            "Jeremy McNichols",
+            63.00620000000004,
+            "WSH"
+        ],
+        [
+            "Ezekiel Elliott",
+            61.93160000000002,
+            "Unknown"
+        ],
+        [
+            "Sean Tucker",
+            61.57899999999993,
+            "TB"
+        ],
+        [
+            "Dare Ogunbowale",
+            58.782599999999974,
+            "HOU"
+        ],
+        [
+            "Nick Chubb",
+            58.34560000000008,
+            "Unknown"
+        ],
+        [
             "Trey Sermon",
             53.249199999999995,
             "IND"
+        ],
+        [
+            "Audric Estime",
+            52.86259999999993,
+            "DEN"
+        ],
+        [
+            "Isiah Pacheco",
+            50.852,
+            "Unknown"
         ],
         [
             "Emari Demercado",
@@ -405,9 +2658,59 @@
             "ARI"
         ],
         [
+            "Dameon Pierce",
+            46.884600000000006,
+            "HOU"
+        ],
+        [
+            "Trey Benson",
+            46.25999999999997,
+            "ARI"
+        ],
+        [
+            "Tyler Goodson",
+            41.862000000000045,
+            "IND"
+        ],
+        [
+            "Christopher Brooks",
+            41.802999999999955,
+            "Unknown"
+        ],
+        [
             "Chris Brooks",
             41.57499999999995,
             "GB"
+        ],
+        [
+            "Blake Corum",
+            41.56220000000001,
+            "LAR"
+        ],
+        [
+            "Isaiah Davis",
+            41.54900000000005,
+            "NYJ"
+        ],
+        [
+            "Jamaal Williams",
+            37.65899999999996,
+            "None"
+        ],
+        [
+            "Cordarrelle Patterson",
+            37.364000000000004,
+            "PIT"
+        ],
+        [
+            "Hassan Haskins",
+            36.38120000000004,
+            "LAC"
+        ],
+        [
+            "D'Ernest Johnson",
+            36.31000000000004,
+            "JAX"
         ],
         [
             "Pierre Strong",
@@ -415,9 +2718,24 @@
             "Unknown"
         ],
         [
+            "Zamir White",
+            33.71980000000003,
+            "LV"
+        ],
+        [
+            "Khalil Herbert",
+            33.0324,
+            "Unknown"
+        ],
+        [
             "Christian McCaffrey",
             32.937,
             "SF"
+        ],
+        [
+            "Chris Rodriguez",
+            32.370599999999996,
+            "Unknown"
         ],
         [
             "Chris Rodriguez Jr.",
@@ -430,6 +2748,21 @@
             "CLE"
         ],
         [
+            "Kendre Miller",
+            30.390999999999977,
+            "Unknown"
+        ],
+        [
+            "Jaylen Wright",
+            30.179999999999982,
+            "MIA"
+        ],
+        [
+            "Carson Steele",
+            29.842000000000045,
+            "KC"
+        ],
+        [
             "Jamycal Hasty",
             29.354000000000024,
             "Unknown"
@@ -440,9 +2773,19 @@
             "ARI"
         ],
         [
+            "JaMycal Hasty",
+            29.22100000000002,
+            "NE"
+        ],
+        [
             "Jordan Mims",
             28.677000000000003,
             "NO"
+        ],
+        [
+            "Patrick Taylor",
+            28.591200000000022,
+            "Unknown"
         ],
         [
             "Kimani Vidal",
@@ -450,9 +2793,59 @@
             "Unknown"
         ],
         [
+            "Ty Chandler",
+            27.991000000000046,
+            "MIN"
+        ],
+        [
+            "Kenny McIntosh",
+            22.306000000000022,
+            "SEA"
+        ],
+        [
+            "Eric Gray",
+            21.724999999999987,
+            "NYG"
+        ],
+        [
+            "Craig Reynolds",
+            21.655000000000033,
+            "DET"
+        ],
+        [
             "Sincere McCormick",
             18.961599999999997,
             "LV"
+        ],
+        [
+            "Ronnie Rivers",
+            17.732999999999983,
+            "LAR"
+        ],
+        [
+            "DeeJay Dallas",
+            17.2514,
+            "ARI"
+        ],
+        [
+            "Julius Chestnut",
+            16.114999999999984,
+            "TEN"
+        ],
+        [
+            "Will Shipley",
+            15.716000000000014,
+            "PHI"
+        ],
+        [
+            "Tony Jones",
+            12.750600000000002,
+            "Unknown"
+        ],
+        [
+            "Jeffery Wilson",
+            12.733999999999991,
+            "Unknown"
         ],
         [
             "Jeff Wilson",
@@ -460,14 +2853,49 @@
             "Unknown"
         ],
         [
+            "Deuce Vaughn",
+            12.308999999999985,
+            "DAL"
+        ],
+        [
+            "Clyde Edwards-Helaire",
+            9.575,
+            "Unknown"
+        ],
+        [
+            "Tyler Badie",
+            9.19579999999999,
+            "DEN"
+        ],
+        [
+            "Raheem Blackshear",
+            8.339,
+            "CAR"
+        ],
+        [
+            "Mike Boone",
+            8.02339999999999,
+            "CAR"
+        ],
+        [
             "Sione Vaki",
             7.5950000000000015,
             "DET"
         ],
         [
+            "Jonathon Brooks",
+            7.5212,
+            "Unknown"
+        ],
+        [
             "J.J. Taylor",
             7.421399999999995,
             "HOU"
+        ],
+        [
+            "Keaton Mitchell",
+            7.084999999999993,
+            "BAL"
         ],
         [
             "Terrell Jennings",
@@ -480,138 +2908,130 @@
             "ATL"
         ],
         [
+            "Travis Homer",
+            6.041999999999991,
+            "CHI"
+        ],
+        [
             "Rasheen Ali",
             5.7505999999999995,
             "BAL"
         ],
         [
+            "Jacob Kibodi",
+            5.054799999999994,
+            "Unknown"
+        ],
+        [
+            "Kene Nwangwu",
+            4.352599999999999,
+            "NYJ"
+        ],
+        [
+            "Dalvin Cook",
+            4.332799999999999,
+            "None"
+        ],
+        [
+            "Jermar Jefferson",
+            4.223799999999995,
+            "None"
+        ],
+        [
+            "Blake Watson",
+            3.2190000000000043,
+            "DEN"
+        ],
+        [
+            "Velus Jones",
+            2.8950000000000005,
+            "Unknown"
+        ],
+        [
+            "Velus Jones Jr.",
+            2.8950000000000005,
+            "CAR"
+        ],
+        [
+            "MarShawn Lloyd",
+            2.552600000000002,
+            "GB"
+        ],
+        [
+            "Myles Gaskin",
+            2.5000000000000004,
+            "None"
+        ],
+        [
+            "Jonathan Ward",
+            2.3623999999999974,
+            "Unknown"
+        ],
+        [
+            "Cody Schrader",
+            2.1090000000000013,
+            "LAR"
+        ],
+        [
+            "Aaron Shampklin",
+            1.8381999999999987,
+            "PIT"
+        ],
+        [
             "Chris Collier",
             1.7066000000000014,
             "LV"
-        ]
-    ],
-    "QB": [
+        ],
         [
-            "Josh Allen",
-            309.37340000000006,
+            "George Holani",
+            1.6610000000000016,
             "Unknown"
         ],
         [
-            "Sam Darnold",
-            301.9784000000001,
+            "Tyreik McAllister",
+            1.106799999999999,
             "Unknown"
         ],
         [
-            "Justin Herbert",
-            279.39200000000034,
-            "Unknown"
-        ],
-        [
-            "Caleb Williams",
-            275.2840000000003,
-            "Unknown"
-        ],
-        [
-            "Jordan Love",
-            248.62480000000025,
-            "Unknown"
-        ],
-        [
-            "Kirk Cousins",
-            219.33560000000017,
-            "Unknown"
-        ],
-        [
-            "Jameis Winston",
-            136.3954,
-            "CLE"
-        ],
-        [
-            "Tua Tagovailoa",
-            135.9356,
-            "Unknown"
-        ],
-        [
-            "Mac Jones",
-            113.2319999999999,
-            "SF"
-        ],
-        [
-            "Dak Prescott",
-            98.85339999999991,
-            "DAL"
-        ],
-        [
-            "Drew Lock",
-            85.76920000000001,
-            "NYG"
-        ],
-        [
-            "Joe Flacco",
-            81.68219999999998,
-            "IND"
-        ],
-        [
-            "Taysom Hill",
-            75.96559999999995,
-            "NO"
-        ],
-        [
-            "Spencer Rattler",
-            73.3196,
-            "NO"
-        ],
-        [
-            "Dorian Thompson-Robinson",
-            38.21440000000002,
+            "Tyrion Davis-Price",
+            0.7948000000000006,
             "PHI"
         ],
         [
-            "Michael Penix",
-            35.76419999999998,
+            "Ke'Shawn Vaughn",
+            0.48659999999999926,
+            "None"
+        ],
+        [
+            "Darrynton Evans",
+            0.35739999999999994,
+            "BUF"
+        ],
+        [
+            "British Brooks",
+            0.26139999999999974,
+            "HOU"
+        ],
+        [
+            "Joshua Kelley",
+            0.22979999999999967,
             "Unknown"
         ],
         [
-            "Sam Howell",
-            2.1116000000000015,
-            "SEA"
-        ],
-        [
-            "Nick Mullens",
-            0.8634,
-            "JAX"
-        ],
-        [
-            "Jake Browning",
-            0.05700000000000001,
-            "CIN"
-        ]
-    ],
-    "P": [
-        [
-            "Jake Bailey",
-            0.19180000000000008,
-            "Unknown"
-        ]
-    ],
-    "DE": [
-        [
-            "Sam Hubbard",
-            6.585000000000004,
-            "Unknown"
-        ]
-    ],
-    "FB": [
-        [
-            "Hunter Luepke",
-            33.884600000000006,
-            "DAL"
+            "Dylan Laube",
+            -0.8974,
+            "LV"
         ]
     ],
     "CB": [
         [
             "Josh Blackwell",
             4.119599999999999,
+            "Unknown"
+        ],
+        [
+            "Marcus Jones",
+            4.086000000000002,
             "Unknown"
         ],
         [
@@ -623,16 +3043,39 @@
             "Tavierre Thomas",
             2.0316,
             "Unknown"
-        ]
-    ],
-    "FS": [
+        ],
         [
-            "Dell Pettus",
-            2.5064,
+            "James Pierre",
+            0.36,
+            "Unknown"
+        ],
+        [
+            "C.J. Goodwin",
+            0.3456,
             "Unknown"
         ]
     ],
     "T": [
+        [
+            "Dan Skipper",
+            7.51099999999999,
+            "Unknown"
+        ],
+        [
+            "Vederian Lowe",
+            7.043999999999996,
+            "Unknown"
+        ],
+        [
+            "Trenton Scott",
+            6.566000000000006,
+            "Unknown"
+        ],
+        [
+            "Wanya Morris",
+            6.5620000000000065,
+            "Unknown"
+        ],
         [
             "Penei Sewell",
             3.2673999999999994,
@@ -642,12 +3085,87 @@
             "J.C. Latham",
             1.1379999999999997,
             "Unknown"
+        ],
+        [
+            "Taylor Decker",
+            0.0788,
+            "Unknown"
         ]
     ],
     "SS": [
         [
+            "Jonathan Owens",
+            4.990200000000001,
+            "Unknown"
+        ],
+        [
             "Ashtyn Davis",
             1.5841999999999987,
+            "Unknown"
+        ],
+        [
+            "Dane Belton",
+            1.04,
+            "Unknown"
+        ],
+        [
+            "Miles Killebrew",
+            1.0118,
+            "Unknown"
+        ],
+        [
+            "Julian Love",
+            0.3571999999999999,
+            "Unknown"
+        ],
+        [
+            "Jaden Hicks",
+            0.2866000000000005,
+            "Unknown"
+        ],
+        [
+            "Sam Franklin",
+            0.122,
+            "Unknown"
+        ]
+    ],
+    "OLB": [
+        [
+            "Jalen Reeves-Maybin",
+            0.1547999999999998,
+            "Unknown"
+        ]
+    ],
+    "DE": [
+        [
+            "Sam Hubbard",
+            6.585000000000004,
+            "Unknown"
+        ]
+    ],
+    "MLB": [
+        [
+            "Divine Deablo",
+            5.237999999999992,
+            "Unknown"
+        ]
+    ],
+    "G": [
+        [
+            "Mike Caliendo",
+            2.3150000000000004,
+            "Unknown"
+        ],
+        [
+            "Tyler Smith",
+            1.6242,
+            "Unknown"
+        ]
+    ],
+    "ILB": [
+        [
+            "J.J. Russell",
+            4.6882,
             "Unknown"
         ]
     ]

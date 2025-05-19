@@ -25,10 +25,9 @@ class BackendTestCase(unittest.TestCase):
 
         required_keys = {
             "player_display_name": str,
-            "player_id": str,
             "position": str,
             "season": int,
-            "fantasy_points_ppr": (int, float)
+            "predicted_points": (int, float)
         }
 
         for player in data:
