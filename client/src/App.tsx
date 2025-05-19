@@ -4,6 +4,7 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import DraftBoard from "./DraftBoard";
+import Homepage from "./Homepage";
 
 
 function App() {
@@ -13,7 +14,7 @@ function App() {
     <DraftBoard />
   </SignedIn>
   <SignedOut>
-    <SignInButton />
+    <Homepage />
   </SignedOut>
   </>
   );

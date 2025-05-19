@@ -63,7 +63,7 @@ def make_get_player_handler(available_players):
             return jsonify({"status": "failure", "message": f"No player found with name {name}."}), 404
 
         player_data = matched.iloc[0].to_dict()
-        return jsonify(player_data), 400
+        return jsonify(player_data), 200
 
     return get_player
 
@@ -119,12 +119,13 @@ def make_fetch_all_players_handler(available_players):
                 "name": row.get("player_display_name", "Unknown"),
                 "position": row.get("position", "N/A"),
                 "pos_rank": int(row.get("pos_rank", -1)),
-                "proj_points": round(float(row.get("fantasy_points_ppr", 0.0)), 2),
+                "proj_points": round(float(row.get("predicted_points", 0.0)), 2),
                 "bye": int(row.get("bye", -1)),
             }
             all_players.append(player)
+    
 
-        return jsonify(all_players), 400
+        return jsonify(all_players), 200
     return fetch_all_players
 
 def make_fetch_user_players_handler(available_players, user_team):
