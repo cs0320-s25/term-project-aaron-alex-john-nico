@@ -38,6 +38,23 @@ export const DraftProvider: React.FC<{ children: React.ReactNode }> = ({ childre
       : numTeams - 1 - indexInRound;
   })();
 
+  useEffect(() => {
+    const fetchRecommendation = async () => {
+      try {
+        const res = await fetch("http://127.0.0.1:3232/best-player", {
+          credentials: "include",
+        });
+        const data = await res.json();
+        console.log("Fetched initial recommendation:", data);
+        setRecommendedPlayer(data);
+      } catch (err) {
+        console.error("Failed to fetch initial recommendation:", err);
+      }
+    };
+
+    fetchRecommendation();
+  }, []);
+
   const makePick = async (player: Player, index: number) => {
     if (isDraftComplete) return;
 

@@ -9,14 +9,15 @@ export interface Player {
   bye: number;
 }
 
-const PlayerCard: React.FC<{ player: Player }> = ({ player }) => {
+const PlayerCard: React.FC<{ player: Player; isRecommended?: boolean }> = ({ player, isRecommended = false }) => {
   const [modalOpen, setModalOpen] = useState(false);
-
+  //#D5FFE5
   return (
     <>
       <div
         style={{
-          backgroundColor: "#D5FFE5",
+          backgroundColor: isRecommended ? "#FFFACD" : "#D5FFE5",
+          border: isRecommended ? "2px solid gold" : "none",
           borderRadius: "1.5vh",
           padding: "1vh",
           width: "10vw",
@@ -42,9 +43,7 @@ const PlayerCard: React.FC<{ player: Player }> = ({ player }) => {
           >
             {player.name}
           </h3>
-          <p style={{ margin: 0, fontSize: "1.4vh" }}>
-            {player.position}
-          </p>
+          <p style={{ margin: 0, fontSize: "1.4vh" }}>{player.position}</p>
           <p style={{ margin: 0, fontSize: "1.2vh", color: "#555" }}>
             Proj: {player.proj_points.toFixed(2)} pts
           </p>

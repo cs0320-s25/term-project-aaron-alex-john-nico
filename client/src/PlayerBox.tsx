@@ -7,6 +7,7 @@ const PlayerBox: React.FC = () => {
     availablePlayers,
     makePick,
     isDraftComplete,
+    recommendedPlayer, //added
   } = useDraft();
 
   const [confirmingPlayer, setConfirmingPlayer] = useState<Player | null>(null);
@@ -22,6 +23,9 @@ const PlayerBox: React.FC = () => {
     makePick(confirmingPlayer, trueIndex);
     setConfirmingPlayer(null);
   };
+
+  console.log("Recommended player from context:", recommendedPlayer?.name);
+
 
   return (
     <>
@@ -49,10 +53,13 @@ const PlayerBox: React.FC = () => {
               }
             }}
           >
-            <PlayerCard player={player} />
+            <PlayerCard player={player}
+            isRecommended={recommendedPlayer?.name === player.name} />
           </div>
         ))}
       </div>
+
+      
 
       {confirmingPlayer && (
         <div
