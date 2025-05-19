@@ -3,7 +3,7 @@ import { useDraft } from "./DraftContext";
 import TeamCard from "./TeamCard";
 
 const TeamBar: React.FC = () => {
-  const { numTeams, draftPosition } = useDraft();
+  const { numTeams, draftPosition, currentTeamIndex } = useDraft();
 
   return (
     <div
@@ -21,7 +21,8 @@ const TeamBar: React.FC = () => {
         <TeamCard
           key={i}
           teamNumber={i + 1}
-          isUserTeam={draftPosition === i + 1}
+          isUserTeam={i === draftPosition}
+          isCurrentTurn={i === currentTeamIndex}
         />
       ))}
     </div>

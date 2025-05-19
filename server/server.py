@@ -17,7 +17,8 @@ def create_app():
     Creates the flask application with all of the specific configurations for our server to run on.
     '''
     app = Flask(__name__)
-    CORS(app)
+    #CORS(app)
+    CORS(app,supports_credentials=True, origins=["http://localhost:5173"])
 
     # Variables to hold all of the players, user's players, and opponent's players for dependency injection.
     available_players = data # dataframe from playerPicker class that holds all players' information
