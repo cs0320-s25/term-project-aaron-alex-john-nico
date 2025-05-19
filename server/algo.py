@@ -1,5 +1,4 @@
 import json
-import os
 from collections import defaultdict, Counter
 from espn_api.football import League  
 

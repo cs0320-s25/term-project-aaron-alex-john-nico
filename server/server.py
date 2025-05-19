@@ -1,7 +1,5 @@
 from flask import Flask
 from flask_cors import CORS
-import data2024 as data2024
-import json
 from handlers import (
     make_add_player_handler,
     make_get_player_handler,
@@ -13,12 +11,16 @@ from handlers import (
 )
 from playerPicker import data
 
-# Creates Server and populates the Player Organizer
+
 def create_app():
+    '''
+    Creates the flask application with all of the specific configurations for our server to run on.
+    '''
     app = Flask(__name__)
     CORS(app)
 
-    available_players = data
+    # Variables to hold all of the players, user's players, and opponent's players for dependency injection.
+    available_players = data # dataframe from playerPicker class that holds all players' information
     user_team = []
     opp_team = []
 

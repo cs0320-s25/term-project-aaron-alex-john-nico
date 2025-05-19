@@ -156,8 +156,18 @@ def make_fetch_opp_players_handler(available_players, opp_team):
     return fetch_opp_players
 
 def best_player_handler(user_team, opp_team):
+    '''
+    Arguments:
+        - user_team: plaayers on the user team.
+        - opp_team: players on the opponent's team.
+
+    Creates a handler that retrieves the next player to draft recommendation.
+    '''
     def fetch_best_player():
-        exclude = user_team + opp_team
+        '''
+        Recommends the next player to draft.
+        '''
+        exclude = user_team + opp_team # exclude players already drafted
         players = get_roster(exclude)
         return jsonify(players[0]), 200 
     return fetch_best_player
